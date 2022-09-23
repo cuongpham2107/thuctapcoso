@@ -20,30 +20,28 @@
 		}
 		public function insert_customers($data){
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
-			$city = mysqli_real_escape_string($this->db->link, $data['city']);
-			$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$address = mysqli_real_escape_string($this->db->link, $data['address']);
-			$country = mysqli_real_escape_string($this->db->link, $data['country']);
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
-			if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone =="" || $password ==""){
+			if($name=="" || $email=="" || $address=="" || $phone =="" || $password ==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";
 				return $alert;
 			}else{
 				$check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
 				$result_check = $this->db->select($check_email);
 				if($result_check){
-					$alert = "<span class='error'>Email Already Existed ! Please Enter Another Email</span>";
+					$alert = "<span class='error text-red-500'>Email đã tồn tại! Vui lòng nhập một email khác
+					</span>";
 					return $alert;
 				}else{
-					$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password')";
+					$query = "INSERT INTO tbl_customer(name,email,address,phone,password) VALUES('$name','$email','$address','$phone','$password')";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Customer Created Successfully</span>";
+						$alert = "<span class='success text-blue-500'>Bạn đã đăng kí thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Customer Created Not Successfully</span>";
+						$alert = "<span class='error text-red-500'>Bạn đã đăng kí không thành công</span>";
 						return $alert;
 					}
 				}

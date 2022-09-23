@@ -5,7 +5,7 @@
 <?php
 		$login_check = Session::get('customer_login'); 
 		if($login_check){
-			header('Location:order.php');
+            echo "<script>window.open('order.php','_self')</script>";
 		}
 ?>
 <?php
@@ -23,89 +23,85 @@
         
     }
 ?>
- <div class="main">
-    <div class="content">
-    	 <div class="login_panel">
-        	<h3>Existing Customers</h3>
-        	<p>Sign in with the form below.</p>
-        	<?php
-			if(isset($login_Customers)){
-    			echo $login_Customers;
-    		}
-        	?>
-        	<form action="" method="post">
-                	<input  type="text" name="email" class="field" placeholder="Enter Email....">
-                    <input  type="password" name="password" class="field"  placeholder="Enter Password...." >
-                 
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
-                    <div class="buttons"><div><input type="submit" name="login" class="grey" value="Sign In"></div></div>
-             </form>
-          </div>
-         <?php
-
-         ?> 
-    	<div class="register_account">
-    		<h3>Register New Account</h3>
-    		<?php
-    		if(isset($insertCustomers)){
-    			echo $insertCustomers;
-    		}
-    		?>
-    		<form action="" method="POST">
-		   			 <table>
-		   				<tbody>
-						<tr>
-						<td>
-							<div>
-							<input type="text" name="name" placeholder="Enter Name..." >
-							</div>
-							
-							<div>
-							   <input type="text" name="city"  placeholder="Enter City..."  >
-							</div>
-							
-							<div>
-								<input type="text" name="zipcode"  placeholder="Enter Zipcode..."  >
-							</div>
-							<div>
-								<input type="text" name="email"  placeholder="Enter Email..."  >
-							</div>
-		    			 </td>
-		    			<td>
-						<div>
-							<input type="text" name="address"  placeholder="Enter Address..."  >
-						</div>
-		    		<div>
-						<select id="country" name="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a Country</option>   
-
-							<option value="hcm">TPHCM</option>
-							<option value="na">Nghệ An</option>
-							<option value="hn">Hà Nội</option>
-							<option value="dn">Đà Nẳng</option>
-							
-
-		         </select>
-				 </div>		        
-	
-		           <div>
-		          <input type="text" name="phone"  placeholder="Enter Phone..." >
-		          </div>
-				  
-				  <div>
-					<input type="text" name="password"  placeholder="Enter Password..." >
-				</div>
-		    	</td>
-		    </tr> 
-		    </tbody></table> 
-		   <div class="search"><div><input type="submit" name="submit" class="grey" value="Create Account"></div></div>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
-		    <div class="clear"></div>
-		    </form>
-    	</div>  	
-       <div class="clear"></div>
-    </div>
- </div>
+ <!-- MAIN -->
+ <main class="site-main site-login">
+        <div class="container">
+            <ol class="breadcrumb-page">
+                <li><a href="index-2.html">Trang chủ </a></li>
+                <li class="active"><a href="#">Đăng nhập, Đăng ký</a></li>
+            </ol>
+        </div>
+        <div class="customer-login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5 class="title-login">Đăng nhập vào tài khoản của bạn</h5>
+                        <p class="p-title-login">Chào mừng bạn đến với tài khoản của bạn.</p>
+						<?php
+							if(isset($login_Customers)){
+								echo $login_Customers;
+							}
+						?>
+                        <form class="login" method="post">
+                            <p class="form-row form-row-wide">
+                                <label>Username or Email Address:<span class="required"></span></label>
+                                <input type="text" value="" name="email"
+                                       placeholder="Type your username or email address" class="input-text">
+                            </p>
+                            <p class="form-row form-row-wide">
+                                <label>Password:<span class="required"></span></label>
+                                <input type="password" name="password" placeholder="************" class="input-text">
+                            </p>
+                            
+                            
+                            <p class="form-row">
+                                <input type="submit" value="Login" name="login" class="button-submit">
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col-sm-6 border-after">
+                        <h5 class="title-login">Great an account</h5>
+                        <p class="p-title-login">Fersonal infomation</p>
+						<?php
+							if(isset($insertCustomers)){
+								echo $insertCustomers;
+							}
+						?>
+                        <form class="register" method="post">
+                            <p class="form-row form-row-wide col-md-6 padding-left">
+                                <label>Họ và tên<span class="required">*</span></label>
+                                <input type="text" value="" name="name" placeholder="First name" class="input-text">
+                            </p>
+                            <p class="form-row form-row-wide col-md-6 padding-right">
+                                <label>Số điện thoại<span class="required"></span></label>
+                                <input title="midname" type="text" value="" name="phone" class="input-text">
+                            </p>
+                            <p class="form-row form-row-wide">
+                                <label>Địa chỉ: <span class="required">*</span></label>
+                                <input title="lastname" type="text" name="address" placeholder="Last name" class="input-text">
+                            </p>
+                            <p class="form-row form-row-wide">
+                                <label>Email Address<span class="required">*</span></label>
+                                <input title="email" type="email" name="email" placeholder="Email address" class="input-text">
+                            </p>
+                            
+                            <p class="form-row form-row-wide col-md-6 padding-left">
+                                <label>Mật khẩu:<span class="required"></span></label>
+                                <input title="pass" type="password" name="password" class="input-text">
+                            </p>
+                            <p class="form-row form-row-wide col-md-6 padding-right">
+                                <label>Nhập lại mật khẩu<span class="required">*</span></label>
+                                <input title="pass2" type="password" name="password" class="input-text">
+                            </p>
+                            <p class="form-row">
+                                <input type="submit" value="Submit" name="submit" class="button-submit">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main><!-- end MAIN -->
 <?php 
 	include 'includes/footer.php';
 	

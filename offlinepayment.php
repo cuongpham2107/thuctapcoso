@@ -17,14 +17,14 @@
     width: 50%;
     border: 1px solid #666;
     float: left;
-    padding: 4px;	
+    padding: 20px;	
 
 	}
  	.box_right {
     width: 47%;
     border: 1px solid #666;
     float: right;
-    padding: 4px;
+    padding: 20px;
 	}
 	a.a_order {
     background: red;
@@ -34,13 +34,16 @@
 }
 </style>
 <form action="" method="POST">
- <div class="main">
-    <div class="content">
+<main class="site-main site-login">
+	<div class="container">
+		<ol class="breadcrumb-page">
+			<li><a href="index-2.html">Trang chủ </a></li>
+			<li class="active"><a href="#">Payment Method</a></li>
+		</ol>
+	</div>
+    <div class="container">
     	<div class="section group">
-			<div class="heading">
-	    		<h3>Offline Payment</h3>
-	    	</div>
-	    		
+		
 	    	<div class="clear"></div>
     		<div class="box_left">
     			<div class="cartpage">
@@ -137,7 +140,7 @@
 					</div>
     		</div>
     		<div class="box_right">
-    			<table class="tblone">
+    			<table class="tblone ">
 				<?php
 				$id = Session::get('customer_id');
 				$get_customers = $cs->show_customers($id);
@@ -180,22 +183,19 @@
 					<td>:</td>
 					<td><?php echo $result['address'] ?></td>
 				</tr>
-				<tr>
-					<td colspan="3"><a href="editprofile.php">Update Profile</a></td>
-					
-				</tr>
 				
 				<?php
 					}
 				}
 				?>
 			</table>
+				<a class="btn btn-primary  px-4 py-2 rounded mt-[4rem]" href="editprofile.php">Chỉnh sửa thông tin </a>
     		</div>
 
  		</div>
 
  	</div>
-	<center><a href="?orderid=order" class="a_order" >Order Now</a></center><br>
+	<center class="mt-8"><a href="?orderid=order" class="a_order " >Order Now</a></center><br>
  </div>
 </form>
 <?php 

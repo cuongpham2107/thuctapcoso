@@ -12,8 +12,8 @@ include 'includes/slider.php';
 					<div class="iconbox-inner">
 						<div class="icon"><span class="flaticon-delivery-truck"></span></div>
 						<div class="content">
-							<h4 class="title">FAST SHIPPING</h4>
-							<p class="text">Dispatch on most items</p>
+							<h4 class="title">Giao hàng nhanh</h4>
+							<p class="text">Điều phối trên hầu hết các mặt hàng</p>
 						</div>
 					</div>
 				</div>
@@ -23,8 +23,8 @@ include 'includes/slider.php';
 					<div class="iconbox-inner">
 						<div class="icon"><span class="flaticon-refresh"></span></div>
 						<div class="content">
-							<h4 class="title">30 DAY RETURns</h4>
-							<p class="text">For peace of mind</p>
+							<h4 class="title">TRẢ HÀNG TRONG 30 NGÀY</h4>
+							<p class="text">Để khách hàng an tâm</p>
 						</div>
 					</div>
 				</div>
@@ -34,8 +34,8 @@ include 'includes/slider.php';
 					<div class="iconbox-inner">
 						<div class="icon"><span class="flaticon-quality-badge"></span></div>
 						<div class="content">
-							<h4 class="title">BEST FURNITURE</h4>
-							<p class="text">Online retailer for home</p>
+							<h4 class="title">NỘI THẤT TỐT NHẤT</h4>
+							<p class="text">Nhà bán lẻ trực tuyến cho gia đình</p>
 						</div>
 					</div>
 				</div>

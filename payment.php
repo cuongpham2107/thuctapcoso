@@ -3,10 +3,10 @@
 	// include 'inc/slider.php';
 ?>
 <?php
-	
+	ob_start();
 	$login_check = Session::get('customer_login'); 
 	if($login_check==false){
-		header('Location:login.php');
+		echo "<script>window.open('login.php','_self')</script>";
 	}
 		
 ?>
@@ -50,25 +50,31 @@
    	 margin-bottom: 20px;
 	}
 </style>
- <div class="main">
+        
+ <main class="site-main site-login">
+	<div class="container">
+		<ol class="breadcrumb-page">
+			<li><a href="index-2.html">Trang chủ </a></li>
+			<li class="active"><a href="#">Payment Method</a></li>
+		</ol>
+	</div>
     <div class="content">
     	<div class="section group">
     		<div class="content_top">
-	    		<div class="heading">
-	    		<h3>Payment Method</h3>
-	    		</div>
+	    		
 	    		
 	    		<div class="clear"></div>
 	    		<div class="wrapper_method">
 		    		<h3 class="payment">Choose your method payment</h3>
-		    		<a href="offlinepayment.php">Offline Payment</a>
-		    		<a href="onlinepayment.php">Online Payment</a><br><br><br>
-		    		<a style="background:grey" href="cart.php"> << Previous</a>
+		    		<a href="offlinepayment.php">Nhận hàng thanh toán</a>
+		    		<!-- <a href="onlinepayment.php">Online Payment</a><br><br><br> -->
+		    		<a style="background:grey" href="cart.php"> << Quay lại giỏ hàng</a>
 		    	</div>
     		</div>
 		
  		</div>
  	</div>
+ </main>
 <?php 
 	include 'includes/footer.php';
 	

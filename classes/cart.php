@@ -43,7 +43,7 @@
 			$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
 			$insert_cart = $this->db->insert($query_insert);
 				if($insert_cart){
-					header("Location:cart.php");
+					header("Location: cart.php");
 				}else{
 					header("Location:404.php");
 				}
