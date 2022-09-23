@@ -33,7 +33,10 @@
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
 			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
+			$product_body = mysqli_real_escape_string($this->db->link, $data['product_body']);
 			$price = mysqli_real_escape_string($this->db->link, $data['price']);
+			$sale_price = mysqli_real_escape_string($this->db->link, $data['sale_price']);
+
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -46,12 +49,12 @@
 			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 			
-			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type=="" || $file_name ==""){
+			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $product_body=="" || $price==""|| $sale_price == "" || $type=="" || $file_name ==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);
-				$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
+				$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,product_body,price,sale_price,type,image) VALUES('$productName','$brand','$category','$product_desc','$product_body','$price','$sale_price','$type','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
 					$alert = "<span class='success'>Insert Product Successfully</span>";
@@ -171,7 +174,9 @@
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
 			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
+			$product_body = mysqli_real_escape_string($this->db->link, $data['product_body']);
 			$price = mysqli_real_escape_string($this->db->link, $data['price']);
+			$sale_price = mysqli_real_escape_string($this->db->link, $data['sale_price']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -187,7 +192,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 
-			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type==""){
+			if($productName=="" || $brand=="" || $category=="" || $product_desc==""|| $product_body=="" || $price=="" || $type==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";
 				return $alert;
 			}else{
@@ -211,8 +216,10 @@
 					catId = '$category', 
 					type = '$type', 
 					price = '$price', 
+					sale_price = '$sale_price',
 					image = '$unique_image',
-					product_desc = '$product_desc'
+					product_desc = '$product_desc',
+					product_body = '$product_body'
 					WHERE productId = '$id'";
 					
 				}else{
@@ -224,9 +231,9 @@
 					catId = '$category', 
 					type = '$type', 
 					price = '$price', 
-					
-					product_desc = '$product_desc'
-
+					sale_price = '$sale_price',
+					product_desc = '$product_desc',
+					product_body = '$product_body'
 					WHERE productId = '$id'";
 					
 				}
@@ -270,7 +277,11 @@
 			$result = $this->db->select($query);
 			return $result;
 		} 
-		
+		public function getproduct_list(){
+			$query = "SELECT * FROM tbl_product order by productId desc ";
+			$result = $this->db->select($query);
+			return $result;
+		} 
 		public function getproduct_new(){
 			$query = "SELECT * FROM tbl_product order by productId desc LIMIT 4";
 			$result = $this->db->select($query);

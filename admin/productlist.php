@@ -26,13 +26,14 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Product Name</th>
-					<th>Product Price</th>
-					<th>Product Image</th>
-					<th>Category</th>
-					<th>Brand</th>
-					<th>Description</th>
-					<th>Type</th>
+					<th>Tên sản phẩm</th>
+					<th>Giá sản phẩm</th>
+					<th>Giá giảm</th>
+					<th>Hình ảnh sản phẩm</th>
+					<th>Danh mục</th>
+					<th>Thương hiệu</th>
+					<th>Mô tả</th>
+					<th>Loại</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -49,6 +50,7 @@
 					<td><?php echo $i ?></td>
 					<td><?php echo $result['productName'] ?></td>
 					<td><?php echo $result['price'] ?></td>
+					<td><?php echo $result['sale_price'] ?></td>
 					<td><img src="uploads/<?php echo $result['image'] ?>" width="80"></td>
 					<td><?php echo $result['catName'] ?></td>
 					<td><?php echo $result['brandName'] ?></td>

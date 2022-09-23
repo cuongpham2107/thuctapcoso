@@ -34,11 +34,22 @@
                         while($result = $get_cate_name->fetch_assoc()){
                        
                 ?>
-                 <form action="" method="post">
+                 <form action="" method="post" enctype="multipart/form-data">
                     <table class="form">					
                         <tr>
                             <td>
+                                <label for="">Tên danh mục</label>
+                            </td>
+                            <td>
                                 <input type="text" value="<?php echo $result['catName'] ?>" name="catName" placeholder="Sửa danh mục sản phẩm..." class="medium" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Tải ảnh lên</label>
+                            </td>
+                            <td>
+                                <input type="file" value="<?php echo $result['image'] ?>" name="image"  />
                             </td>
                         </tr>
 						<tr> 

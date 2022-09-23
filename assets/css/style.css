@@ -5554,7 +5554,7 @@ label.inline {
 }
 .product-list-right .breadcrumb-page,
 .product-grid-right .breadcrumb-page {
-	text-align: right;
+	text-align: left;
 	margin-right: 85px;
 }
 .title-product {
@@ -5804,7 +5804,7 @@ label.inline {
 /*****grid-product*****/
 
 .products.products-grid {
-	display: inline-block;
+	/* display: inline-block; */
 	margin-left: -15px;
 	margin-right: -15px;
 }

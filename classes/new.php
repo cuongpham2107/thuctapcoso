@@ -74,20 +74,20 @@
 
 
 			if($title=="" || $description=="" || $body=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Các trường không được để trống!</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 500000) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước hình ảnh phải nhỏ hơn 5MB!</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
 				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
@@ -111,10 +111,10 @@
 				}
 				$result = $this->db->update($query);
 					if($result){
-						$alert = "<span class='success'>Product Updated Successfully</span>";
+						$alert = "<span class='success'>Sửa bài viết thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Product Updated Not Success</span>";
+						$alert = "<span class='error'>Sửa bài viết thất bại</span>";
 						return $alert;
 					}
 				

@@ -27,7 +27,7 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên sản phẩm</label>
                     </td>
                     <td>
                         <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
@@ -35,7 +35,7 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category">
@@ -59,7 +59,7 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                     </td>
                     <td>
                         <select id="select" name="brand">
@@ -86,24 +86,40 @@
 				
 				 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea name="product_desc" class="tinymce"></textarea>
                     </td>
                 </tr>
-				<tr>
-                    <td>
-                        <label>Price</label>
+                <tr>
+                    <td style="vertical-align: top; padding-top: 9px;">
+                        <label>Nội dung</label>
                     </td>
                     <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        <textarea name="product_body" class="tinymce"></textarea>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Giá</label>
+                    </td>
+                    <td>
+                        <input type="text" name="price" placeholder="Nhập giá..." class="medium" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Giá giảm</label>
+                    </td>
+                    <td>
+                        <input type="text" name="sale_price" placeholder="Nhập giá giảm..." class="medium" />
                     </td>
                 </tr>
             
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Tải hình ảnh lên</label>
                     </td>
                     <td>
                         <input type="file" name="image" />

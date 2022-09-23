@@ -8,7 +8,7 @@ Class Database{
    public $host   = "localhost";
    public $user   = "root";
    public $pass   = "";
-   public $dbname = "website_mvc";
+   public $dbname = "thuctapcoso";
  
  
    public $link;

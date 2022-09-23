@@ -22,8 +22,9 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Category Name</th>
+							<th>No.</th>
+							<th>Tên danh mục</th>
+							<th>Hình ảnh</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -39,7 +40,8 @@
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
 							<td><?php echo $result['catName'] ?></td>
-							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Edit</a> || <a onclick = "return confirm('Are you want to delete?')" href="?delid=<?php echo $result['catId'] ?>">Delete</a></td>
+							<td><img src="uploads/<?php echo $result['image'] ?>" width="80"></td>
+							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Sửa</a> || <a onclick = "return confirm('Are you want to delete?')" href="?delid=<?php echo $result['catId'] ?>">Xoá</a></td>
 						</tr>
 						<?php
 					}

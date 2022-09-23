@@ -23,12 +23,24 @@
 
 			$catName = $this->fm->validation($catName);
 			$catName = mysqli_real_escape_string($this->db->link, $catName);
+
+			$permited  = array('jpg', 'jpeg', 'png', 'gif');
+			$file_name = $_FILES['image']['name'];
+			$file_size = $_FILES['image']['size'];
+			$file_temp = $_FILES['image']['tmp_name'];
+
+			$div = explode('.', $file_name);
+			$file_ext = strtolower(end($div));
+			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+			$uploaded_image = "uploads/".$unique_image;
 			
-			if(empty($catName)){
+			if(empty($catName) || empty($file_name)){
 				$alert = "<span class='error'>Category must be not empty</span>";
 				return $alert;
 			}else{
-				$query = "INSERT INTO tbl_category(catName) VALUES('$catName')";
+				move_uploaded_file($file_temp,$uploaded_image);
+
+				$query = "INSERT INTO tbl_category(catName,image) VALUES('$catName','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
 					$alert = "<span class='success'>Insert Category Successfully</span>";
@@ -49,12 +61,48 @@
 			$catName = $this->fm->validation($catName);
 			$catName = mysqli_real_escape_string($this->db->link, $catName);
 			$id = mysqli_real_escape_string($this->db->link, $id);
+			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
+			$permited  = array('jpg', 'jpeg', 'png', 'gif');
+
+			$file_name = $_FILES['image']['name'];
+			$file_size = $_FILES['image']['size'];
+			$file_temp = $_FILES['image']['tmp_name'];
+
+			$div = explode('.', $file_name);
+			$file_ext = strtolower(end($div));
+			// $file_current = strtolower(current($div));
+			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+			$uploaded_image = "uploads/".$unique_image;
 
 			if(empty($catName)){
 				$alert = "<span class='error'>Category must be not empty</span>";
 				return $alert;
 			}else{
-				$query = "UPDATE tbl_category SET catName = '$catName' WHERE catId = '$id'";
+				if(!empty($file_name)){
+					if ($file_size > 500000) {
+
+					$alert = "<span class='success'>Kích thước hình ảnh phải nhỏ hơn 5MB!</span>";
+					return $alert;
+					} 
+					elseif (in_array($file_ext, $permited) === false) 
+					{
+					// echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
+					$alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
+					return $alert;
+
+					}
+					move_uploaded_file($file_temp,$uploaded_image);
+					$query = "UPDATE tbl_category SET
+					catName = '$catName',
+					image = '$unique_image'
+					WHERE catId = '$id'";
+				}
+				else{
+					//Nếu người dùng không chọn ảnh
+					$query = "UPDATE tbl_category SET
+                    catName = '$catName',
+					WHERE catId = '$id'";
+				}
 				$result = $this->db->update($query);
 				if($result){
 					$alert = "<span class='success'>Category Updated Successfully</span>";

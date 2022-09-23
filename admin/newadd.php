@@ -29,7 +29,7 @@
                         <label>Tiêu đề</label>
                     </td>
                     <td>
-                        <input type="text" name="title" placeholder="Enter New title..." class="medium" />
+                        <input type="text" name="title" placeholder="Nhập tiêu đề mới ..." class="medium" />
                     </td>
                 </tr>
 				
@@ -38,7 +38,7 @@
                         <label>Mô tả</label>
                     </td>
                     <td>
-                        <textarea style="width: 55%;padding: 4px 4px 5px 4px;" type="text"  name="description" ></textarea>
+                        <textarea style="width: 55%;padding: 4px 4px 5px 4px;" type="text"  name="description"class="tinymce" ></textarea>
                     </td>
                 </tr>
                 <tr>

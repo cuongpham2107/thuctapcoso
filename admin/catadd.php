@@ -21,11 +21,22 @@
                     echo $insertCat;
                 }
                 ?>
-                 <form action="catadd.php" method="post">
+                 <form action="catadd.php" method="post" enctype="multipart/form-data">
                     <table class="form">					
                         <tr>
                             <td>
+                                <label>Tên danh mục</label>
+                            </td>
+                            <td>
                                 <input type="text" name="catName" placeholder="Làm ơn thêm danh mục sản phẩm..." class="medium" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Upload Image</label>
+                            </td>
+                            <td>
+                                <input type="file" name="image" />
                             </td>
                         </tr>
 						<tr> 

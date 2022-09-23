@@ -38,7 +38,7 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên sản phẩm</label>
                     </td>
                     <td>
                         <input type="text"  name="productName" value="<?php echo  $result_product['productName']?>" class="medium" />
@@ -46,11 +46,11 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category">
-                            <option>--------Select Category--------</option>
+                            <option>--------Chọn Danh mục--------</option>
                             <?php
                             $cat = new category();
                             $catlist = $cat->show_category();
@@ -78,11 +78,11 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                     </td>
                     <td>
                         <select id="select" name="brand">
-                            <option>--------Select Brand-------</option>
+                            <option>--------CHọn Thương Hiệu-------</option>
 
                              <?php
                             $brand = new brand();
@@ -111,24 +111,40 @@
 				
 				 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea name="product_desc" class="tinymce"><?php echo $result_product['product_desc'] ?></textarea>
                     </td>
                 </tr>
+                <tr>
+                    <td style="vertical-align: top; padding-top: 9px;">
+                        <label>Nội dung</label>
+                    </td>
+                    <td>
+                        <textarea name="product_body" class="tinymce"><?php echo $result_product['product_body'] ?></textarea>
+                    </td>
+                </tr>
 				<tr>
                     <td>
-                        <label>Price</label>
+                        <label>Giá</label>
                     </td>
                     <td>
                         <input type="text" value="<?php echo $result_product['price'] ?>" name="price" class="medium" />
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <label>Giá giảm</label>
+                    </td>
+                    <td>
+                        <input type="text" value="<?php echo $result_product['sale_price'] ?>" name="sale_price" class="medium" />
+                    </td>
+                </tr>
             
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Tải hình ảnh lên</label>
                     </td>
                     <td>
                         <img src="uploads/<?php echo $result_product['image'] ?>" width="90"><br>
@@ -138,7 +154,7 @@
 				
 				<tr>
                     <td>
-                        <label>Product Type</label>
+                        <label>Loại sản phảm</label>
                     </td>
                     <td>
                         <select id="select" name="type">
@@ -146,13 +162,13 @@
                             <?php
                             if($result_product['type']==0){
                             ?>
-                            <option selected value="0">Featured</option>
-                            <option value="1">Non-Featured</option>
+                            <option selected value="0">Nổi bật</option>
+                            <option value="1">Không nổi bật</option>
                             <?php
                         }else{
                             ?>
-                            <option value="0">Featured</option>
-                            <option selected value="1">Non-Featured</option>
+                           <option  value="0">Nổi bật</option>
+                            <option selected value="1">Không nổi bật</option>
                             <?php
                             }
                             ?>

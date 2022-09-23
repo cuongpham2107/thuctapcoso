@@ -45,28 +45,19 @@ include 'includes/slider.php';
 </div>
 <div class="block-top-categori">
 	<div class="container">
-		<div class="title-of-section main-title"><span>Top Categories</span></div>
+		<div class="title-of-section main-title"><span>Danh mục sản phẩm</span></div>
 		<div class="owl-carousel nav-style2" data-nav="true" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4}}'>
+		<?php 
+			$catefory = $cat->show_category_fontend();
+			foreach($catefory as $result){
+		?>
 			<div class="block-top-categori-item">
-				<a href="#"><img src="assets/images/home1/c1.jpg" alt="c1"></a>
-				<div class="block-top-categori-title">Speakers</div>
+				<a href="#"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="c1"></a>
+				<div class="block-top-categori-title"><?php echo $result['catName'] ?></div>
 			</div>
-			<div class="block-top-categori-item">
-				<a href="#"><img src="assets/images/home1/c2.jpg" alt="c2"></a>
-				<div class="block-top-categori-title">Game & Consoles</div>
-			</div>
-			<div class="block-top-categori-item">
-				<a href="#"><img src="assets/images/home1/c3.jpg" alt="c3"></a>
-				<div class="block-top-categori-title">Game Mouse</div>
-			</div>
-			<div class="block-top-categori-item">
-				<a href="#"><img src="assets/images/home1/c4.jpg" alt="c4"></a>
-				<div class="block-top-categori-title">Cell Phones</div>
-			</div>
-			<div class="block-top-categori-item">
-				<a href="#"><img src="assets/images/home1/c5.jpg" alt="c5"></a>
-				<div class="block-top-categori-title">Monitor</div>
-			</div>
+		<?php 
+			} 
+		?>
 		</div>
 	</div>
 </div>
@@ -100,7 +91,7 @@ include 'includes/slider.php';
 </div>
 <div class="block-section-4">
 	<div class="container">
-		<div class="title-of-section main-title">Featured Products</div>
+		<div class="title-of-section main-title">Sản phẩm nổi bật</div>
 		<div class="tab-product tab-product-fade-effect">
 			<ul class="box-tabs nav-tab">
 				<li class="active"><a data-animated="" data-toggle="tab" href="#tab-1">Tất cả sản phẩm</a></li>
@@ -149,7 +140,7 @@ include 'includes/slider.php';
 					<div id="tab-2" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getproduct_feathered();
+							$product_feathered = $product->getLastestDell();
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -182,7 +173,7 @@ include 'includes/slider.php';
 					<div id="tab-3" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getproduct_feathered();
+							$product_feathered = $product->getLastestOppo();
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -215,7 +206,7 @@ include 'includes/slider.php';
 					<div id="tab-4" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getproduct_feathered();
+							$product_feathered = $product->getLastestSamsung();
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -262,38 +253,38 @@ include 'includes/slider.php';
 		</div>
 	</div>
 </div>
-<div class="block-the-blog">
+
+<div class="mt-20">
 	<div class="container">
 		<div class="title-of-section"><span>Bài viết mới nhất</span></div>
-		<div class="owl-carousel nav-style2" data-nav="true" data-autoplay="false" data-dots="true" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"600":{"items":2},"992":{"items":3}}'>
-			
+		<div class="flex justify-between space-x-4">
 			<?php
 				$news_list = $new->show_new();
 				foreach($news_list as $val){
 			?>
-			<div class="blog-item">
-				<div class="post-thumb">
+			<div class="w-1/4">
+				<div class="w-auto p-2">
 					<a href="detailsNew.php?newid=<?php echo $val['newId'] ?>">
-						<img src="admin/uploads/<?php echo $val['image'] ?>" alt="blog1"></a>
+					<img class="h-96 w-full object-fill" src="admin/uploads/<?php echo $val['image'] ?>" alt="blog1"></a>
 				</div>
-				<div class="post-item-info">
-					<h3 class="post-name"><a href="#"><?php echo $val['title'] ?></a></h3>
-					<div class="post-metas">
-						<span class="author">Người đăng: <span>Admin</span></span>
+				<div class="mt-8 p-2 ">
+					<h3 class="text-3xl">
+						<a href="detailsNew.php?newid=<?php echo $val['newId'] ?>"><?php echo $fm->textShorten($val['title'], 50) ?></a>
+					</h3>
+					<div class="my-4">
+						<span class="text-red-500">Người đăng: <span>Admin</span></span>
 						<!-- <span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>36 Comments</span> -->
 					</div>
-					<div><?php echo $fm->textShorten($val['description'], 50) ?>
-					</div>
+					<p><?php echo $fm->textShorten($val['description'], 100) ?>
+					</p>
 				</div>
 			</div>
-				<?php 
-				}
+			<?php 
+			}
 			?>
 		</div>
 	</div>
 </div>
-
-
 
 <?php
 include 'includes/footer.php';
