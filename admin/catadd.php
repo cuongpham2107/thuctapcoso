@@ -33,7 +33,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <label>Upload Image</label>
+                                <label>Tải ảnh lên</label>
                             </td>
                             <td>
                                 <input type="file" name="image" />

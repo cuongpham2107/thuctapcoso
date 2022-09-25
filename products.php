@@ -24,17 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 }
 
 
-if (isset($insertCart)) {
-	echo $insertCart;
-}
-
-if (isset($insertCompare)) {
-	echo $insertCompare;
-}
-
-if (isset($insertWishlist)) {
-	echo $insertWishlist;
-}
 
 
 ?>
@@ -44,8 +33,8 @@ if (isset($insertWishlist)) {
 <main class="site-main product-list product-grid product-grid-right">
 	<div class="container">
 		<ol class="breadcrumb-page">
-			<li><a href="index.html">Home </a></li>
-			<li class="active"><a href="#">Grid Categorys </a></li>
+			<li><a href="index.html">Trang chủ </a></li>
+			<li class="active"><a href="#">Tất cả sản phẩm</a></li>
 		</ol>
 	</div>
 	<div class="container">
@@ -54,31 +43,8 @@ if (isset($insertWishlist)) {
 				<div class="main-content">
 
 					<div class="toolbar-products">
-						<h4 class="title-product">Grid Category</h4>
-						<div class="toolbar-option">
-							<div class="toolbar-sort">
-								<select title="sort" class="chosen-select sorter-options form-control">
-									<option selected="selected" value="position">Sort by popularity</option>
-									<option value="name">Name</option>
-									<option value="price">Price</option>
-								</select>
-							</div>
-							<div class="toolbar-per">
-								<select title="limit" class="chosen-select limiter-options form-control">
-									<option selected="selected" value="6">20 per page</option>
-									<option value="15">15</option>
-									<option value="30">30</option>
-								</select>
-							</div>
-							<div class="modes">
-								<a href="grid-product.html" class="active modes-mode mode-grid" title="Grid"><i class="fa fa-th-large"></i>
-									<span>Grid</span>
-								</a>
-								<a href="list-product.html" title="List" class="modes-mode mode-list"><i class="fa fa-bars"></i>
-									<span>List</span>
-								</a>
-							</div>
-						</div>
+						<h4 class="title-product text-center">Tất cả sản phẩm</h4>
+						
 					</div>
 					<div class="products products-list products-grid">
 						<?php $product_list = $product->getproduct_list();
@@ -187,7 +153,6 @@ if (isset($insertWishlist)) {
 							<li><a href="#">3</a></li>
 							<li class="back-next"><a href="#">Next</a></li>
 						</ul>
-						<span class="show-resuilt">Showing 1-8 of 12 result</span>
 					</div>
 				</div>
 			</div>
@@ -204,7 +169,7 @@ if (isset($insertWishlist)) {
 											foreach ($category as $key => $value) {
 												?>
 												<li class="mb-2">
-													<a href="#"><?php echo $value['catName'] ?></a>
+													<a href="productbycat.php?catid=<?php echo $value['catId'] ?>"><?php echo $value['catName'] ?></a>
 												</li>
 											<?php
 												}
@@ -214,7 +179,7 @@ if (isset($insertWishlist)) {
 								</div>
 							</div>
 							<div class="filter-options-item filter-brand">
-								<div class="filter-options-title">Brand</div>
+								<div class="filter-options-title">Thương hiệu sản phẩm</div>
 								<div class="filter-options-content">
 									<ul>
 									<?php 
@@ -222,7 +187,7 @@ if (isset($insertWishlist)) {
 											foreach ($brands as $key => $value) {
 												?>
 												<li class="mb-2">
-													<a href="#"><?php echo $value['brandName'] ?></a>
+													<a href="productbybrand.php?brandid=<?php echo $value['brandId'] ?>"><?php echo $value['brandName'] ?></a>
 												</li>
 											<?php
 												}
@@ -576,6 +541,24 @@ if (isset($insertWishlist)) {
 		</div>
 	</div>
 </main><!-- end MAIN -->
+
+<?php 
+
+
+if (isset($insertCart)) {
+	
+} 
+if (isset($insertCompare)) {
+}
+
+if (isset($insertWishlist)) {
+}
+?>
+
+
+
+
+
 
 <?php
 include 'includes/footer.php';

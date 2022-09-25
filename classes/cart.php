@@ -43,9 +43,9 @@
 			$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
 			$insert_cart = $this->db->insert($query_insert);
 				if($insert_cart){
-					header("Location: cart.php");
+					echo "<script>window.location ='cart.php'</script>";
 				}else{
-					header("Location:404.php");
+					echo "<script>window.location ='404.php'</script>";
 				}
 			}
 			

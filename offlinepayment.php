@@ -8,7 +8,8 @@
        $customer_id = Session::get('customer_id');
        $insertOrder = $ct->insertOrder($customer_id);
        $delCart = $ct->del_all_data_cart();
-       header('Location:success.php');
+    //    header('Location:success.php');
+	   echo "<script>window.location ='success.php'</script>";
     }
  
 ?>

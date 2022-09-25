@@ -18,8 +18,8 @@
     color: red;
 }
 </style>
- <div class="main">
-    <div class="content">
+ <div class="site-main product-list product-grid product-grid-right">
+    <div class="container">
     	<div class="cartoption">		
 			<div class="cartpage">
 			    <div class="order_page">

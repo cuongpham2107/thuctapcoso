@@ -61,7 +61,7 @@
 					Session::set('customer_login',true);
 					Session::set('customer_id',$value['id']);
 					Session::set('customer_name',$value['name']);
-					header('Location:order.php');
+					echo "<script>window.location ='order.php'</script>";
 				}else{
 					$alert = "<span class='error'>Email or Password doesn't match</span>";
 					return $alert;

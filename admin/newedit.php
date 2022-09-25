@@ -77,7 +77,7 @@
                         <select id="select" name="type">
                             <option>Select Type</option>
                             <?php
-                            if($result_new['type']==0){
+                            if($result_new['status']==0){
                             ?>
                             <option selected value="0">Ẩn</option>
                             <option value="1">Hiện</option>
@@ -86,6 +86,29 @@
                             ?>
                             <option value="0">Ẩn</option>
                             <option selected value="1">Hiện</option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Trạng thái</label>
+                    </td>
+                    <td>
+                        <select id="select" name="type">
+                            <option>Select Type</option>
+                            <?php
+                            if($result_new['type']==0){
+                            ?>
+                            <option selected value="0">About</option>
+                            <option value="1">Page</option>
+                            <?php
+                        }else{
+                            ?>
+                            <option value="0">About</option>
+                            <option selected value="1">Page</option>
                             <?php
                             }
                             ?>

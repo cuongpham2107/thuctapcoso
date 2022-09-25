@@ -39,7 +39,7 @@
                     </td>
                     <td>
                         <select id="select" name="category">
-                            <option>--------Select Category--------</option>
+                            <option>--------Chọn danh mục --------</option>
                             <?php
                             $cat = new category();
                             $catlist = $cat->show_category();
@@ -63,7 +63,7 @@
                     </td>
                     <td>
                         <select id="select" name="brand">
-                            <option>--------Select Brand-------</option>
+                            <option>--------Chọn thương hiệu-------</option>
 
                              <?php
                             $brand = new brand();

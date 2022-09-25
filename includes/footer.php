@@ -47,17 +47,25 @@
                 </div>
             </div>
         </div>
+        <?php
+            $get_setting = $setting->getSetting();
+            if($get_setting){
+                while($result = $get_setting->fetch_assoc()){
+                
+            ?>
         <div class="footer-column equal-container">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 equal-elem">
-                        <div class="logo-footer"><img src="assets/images/logo-light.png" alt="logo"></div>
+                        <div class="logo-footer">
+                            <img src="admin/uploads/<?php echo $result['logo'] ?>" style="width: 100px;margin:0px" alt="logo">
+                        </div>
                         <div class="contacts">
-                            <p class="contacts-info">Nullam tristique tortor nibh, in viverra libero sollicitudin ac.
-                                Suspendisse quis lacinia ipsum. Etiam scelerisque sit amet lectus quis lacinia. Sed.</p>
-                            <span class="contacts-info info-address ">218 Fifth Avenue, HeavenTower NewYork City</span>
-                            <span class="contacts-info info-phone">(+68) 123 456 7890</span>
-                            <span class="contacts-info info-support">Hot-Support@Dagon.com</span>
+                            <h2 class="text-white mb-4 text-3xl"><?php echo $result['title'] ?></h2>
+                            <p class="contacts-info"><?php echo $result['description'] ?></p>
+                            <span class="contacts-info info-address "><?php echo $result['address'] ?></span>
+                            <span class="contacts-info info-phone"><?php echo $result['phone'] ?></span>
+                            <span class="contacts-info info-support"><?php echo $result['email'] ?></span>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-6 equal-elem">
@@ -90,8 +98,8 @@
                     </div>
                     <div class="col-md-4 col-sm-6 equal-elem">
                         <div class="links">
-                            <h3 class="title-of-section">Newsletter</h3>
-                            <span class="span-newsletter">Get notified of new products, limited releases, and more.</span>
+                            <h3 class="title-of-section">Đăng ký nhận khuyến mãi</h3>
+                            <span class="span-newsletter">Nhận thông báo về sản phẩm mới, bản phát hành giới hạn và hơn thế nữa.</span>
                             <div class="newsletter-form">
                                 <form id="newsletter-validate-detail" class="form subscribe">
                                     <div class="control">
@@ -104,17 +112,18 @@
                                 </form>
                             </div>
                             <div class="socials">
-                                <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="<?php echo $result['link_twitter'] ?>" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="<?php echo $result['link_facebook'] ?>" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="<?php echo $result['link_youtobe'] ?>" class="social"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                <a href="<?php echo $result['link_instagram'] ?>" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="copyright full-width">
+        <?php } } ?>
+        <!-- <div class="copyright full-width">
             <div class="container">
                 <div class="copyright-right">
                     © Copyright 2020<span> Dagon</span>. All Rights Reserved.
@@ -126,7 +135,7 @@
                     <a href="#"><img src="assets/images/general/pay4.jpg" alt="pay4"></a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer>
     <!-- end FOOTER -->
 </div>

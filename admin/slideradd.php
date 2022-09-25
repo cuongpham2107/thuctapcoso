@@ -12,7 +12,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Slider</h2>
+        <h2>Thêm mới Banner</h2>
     <div class="block">    
     <?php
     if(isset($insertSlider)){
@@ -23,7 +23,7 @@
             <table class="form">     
                 <tr>
                     <td>
-                        <label>Title</label>
+                        <label>Tiêu đề</label>
                     </td>
                     <td>
                         <input type="text" name="sliderName" placeholder="Enter Slider Title..." class="medium" />
@@ -32,7 +32,7 @@
     
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Tải ảnh lên</label>
                     </td>
                     <td>
                         <input type="file" name="image"/>
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Type</label>
+                        <label>Trạng thái</label>
                     </td>
                     <td>
                         <select name="type">

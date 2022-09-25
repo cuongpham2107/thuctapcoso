@@ -23,8 +23,8 @@
         
  //    }
 ?>
- <div class="main">
-    <div class="content">
+ <div class="site-main product-list product-grid product-grid-right">
+    <div class="container">
     	<div class="section group">
     		<div class="content_top">
 	    		<div class="heading">

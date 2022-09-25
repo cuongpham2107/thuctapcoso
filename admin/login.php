@@ -14,14 +14,14 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Login</title>
+<title>Đăng nhập</title>
     <link rel="stylesheet" type="text/css" href="css/stylelogin.css" media="screen" />
 </head>
 <body>
 <div class="container">
 	<section id="content">
 		<form action="login.php" method="post">
-			<h1>Admin Login</h1>
+			<h1>Đăng nhập Trang quản trị</h1>
 			<span><?php
 
 			if(isset($login_check)){
@@ -36,12 +36,10 @@
 				<input type="password" placeholder="Password" required="" name="adminPass"/>
 			</div>
 			<div>
-				<input type="submit" value="Log in" />
+				<input type="submit" value="Đăng nhập" />
 			</div>
 		</form><!-- form -->
-		<div class="button">
-			<a href="#">Training with live project</a>
-		</div><!-- button -->
+		
 	</section><!-- content -->
 </div><!-- container -->
 </body>

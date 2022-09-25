@@ -50,22 +50,22 @@
                     <img src="img/livelogo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Training with live project</h1>
-					<p>www.webextrasite.com</p>
+					<h1>Admin website bán máy tính</h1>
+					<p>http://localhost</p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminName') ?></li>
+                            <li>Xin chào <?php echo Session::get('adminName') ?></li>
                         
                             <?php
                             if(isset($_GET['action']) && $_GET['action']=='logout'){
                                 Session::destroy();
                             }
                             ?>
-                            <li><a href="?action=logout">Logout</a></li>
+                            <li><a href="?action=logout">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -77,11 +77,11 @@
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href="index.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>User Profile</span></a></li>
-				<li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
-                <li class="ic-charts"><a href="../../index.php"><span>Xem trang web</span></a></li>
+                <li class="ic-dashboard"><a href="index.php"><span>Trang chủ</span></a> </li>
+                <!-- <li class="ic-form-style"><a href=""><span>Thông tin tài khoản</span></a></li> -->
+				<li class="ic-typography"><a href="changepassword.php"><span>Đổi mật khẩu</span></a></li>
+				<li class="ic-grid-tables"><a href="inbox.php"><span>Tin nhắn</span></a></li>
+                <li class="ic-charts"><a href="../index.php"><span>Xem trang web</span></a></li>
             </ul>
         </div>
         <div class="clear">

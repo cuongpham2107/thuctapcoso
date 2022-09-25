@@ -20,6 +20,7 @@ $brand = new brand();
 $cs = new customer();
 $product = new product();
 $new = new news();
+$setting = new setting();
 
 ?>
 <?php
@@ -66,6 +67,12 @@ header("Cache-Control: max-age=2592000");
 	<script defer type="text/javascript" src="assets/js/Modernizr.js"></script>
 	<script defer type="text/javascript" src="assets/js/jquery.plugin.js"></script>
 	<script defer type="text/javascript" src="assets/js/jquery.countdown.js"></script>
+	<!-- <script defer type="text/javascript" src="assets/js/notify.js"></script>
+	<script defer type="text/javascript" src="assets/js/notify.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/styles/metro/notify-metro.css" />
+
 </head>
 
 <body class="index-opt-1">
@@ -169,14 +176,12 @@ header("Cache-Control: max-age=2592000");
 									if ($login_check) {
 										echo '
 											<li class="switcher-option">
-												<a href="profile.php" class="switcher-flag icon">Profile</a>
+												<a href="profile.php" class="switcher-flag icon">Thông tin tài khoản</a>
 											</li>
 											<li class="switcher-option">
-												<a href="compare.php" class="switcher-flag icon">Compare</a>
+												<a href="orderdetails.php" class="switcher-flag icon">Đơn hàng</a>
 											</li>
-											<li class="switcher-option">
-												<a href="wishlist.php" class="switcher-flag icon">Wishlist</a>
-											</li>
+											
 											<li class="switcher-option">
 												<a href="?customer_id=' . Session::get('customer_id') . '" class="switcher-flag icon">Đăng xuất</a>
 											</li>

@@ -38,10 +38,12 @@
                       
                     </ul>
                 </li>
-              
-              
-               
-                
+                <li>
+                    <a href="setting.php" class="menuitem">Cài đặt</a>
+                    <ul class="submenu">
+                        <li><a href="setting.php">Cài đặt website</a> </li>
+                    </ul>
+                </li> 
             </ul>
         </div>
     </div>

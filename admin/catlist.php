@@ -10,7 +10,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Category List</h2>
+                <h2>Danh sách danh mục</h2>
                 <div class="block">    
                 <?php
 
@@ -25,7 +25,7 @@
 							<th>No.</th>
 							<th>Tên danh mục</th>
 							<th>Hình ảnh</th>
-							<th>Action</th>
+							<th>Hành động</th>
 						</tr>
 					</thead>
 					<tbody>

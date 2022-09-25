@@ -24,17 +24,17 @@
         
     }
 ?>
- <div class="main">
-    <div class="content">
+ <div class="site-main product-list product-grid product-grid-right">
+    <div class="container">
     	<div class="section group">
     		<div class="content_top">
 	    		<div class="heading">
-	    		<h3>Update Profile Customers</h3>
+	    		<h3 class="mb-8 text-center text-3xl">Update Profile Customers</h3>
 	    		</div>
 	    		<div class="clear"></div>
     		</div>
 			<form action="" method="post">
-			<table class="tblone">
+			<table class="tblone " >
 				<tr>
 					
 						<?php

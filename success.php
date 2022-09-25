@@ -27,7 +27,7 @@ p.success_note {
  <div class="main">
     <div class="content">
     	<div class="section group">
-			<h2 class="success_order">Success Order</h2>
+			<h2 class="success_order text-3xl my-8">Đặt hàng thành công</h2>
 			<?php
 			 $customer_id = Session::get('customer_id');
 			 $get_amount = $ct->getAmountPrice($customer_id);
@@ -40,7 +40,7 @@ p.success_note {
 			 	}
 			 }
 			?>
-			<p class="success_note">Total Price You Have Bought From My Website : <?php
+			<p class="success_note">Tổng giá bạn đã mua từ trang web của tôi là : <?php
 
 			$vat = $amount * 0.1;
 			$total = $vat + $amount;
@@ -48,7 +48,7 @@ p.success_note {
 
 
 			 ?> </p>
-			<p class="success_note">We will contact as soon as possiable. Please see your order details here <a href="orderdetails.php">Click Here</a></p>
+			<p class="success_note">Chúng tôi sẽ liên hệ ngay khi có thể. Vui lòng xem chi tiết đơn hàng của bạn tại đây <a class="text-red-600 font-bold" href="orderdetails.php">Xem thêm</a></p>
  		</div>
 
  	</div>

@@ -21,7 +21,7 @@ include_once ($filepath.'/../helpers/format.php');
 <?php  ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Sửa danh mục</h2>
+                <h2>Thông tin khách hàng</h2>
 
                <div class="block copyblock"> 
                 
@@ -34,14 +34,14 @@ include_once ($filepath.'/../helpers/format.php');
                  <form action="" method="post">
                     <table class="form">					
                         <tr>
-                            <td>Name</td>
+                            <td>Tên</td>
                             <td>:</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['name'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
-                            <td>Phone</td>
+                            <td>Số điện thoại</td>
                             <td>:</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" class="medium" />
@@ -62,7 +62,7 @@ include_once ($filepath.'/../helpers/format.php');
                             </td>
                         </tr>
                          <tr>
-                            <td>Address</td>
+                            <td>Địa chỉ</td>
                             <td>:</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" class="medium" />
@@ -76,7 +76,7 @@ include_once ($filepath.'/../helpers/format.php');
                             </td>
                         </tr>
                         <tr>
-                            <td>Email</td>
+                            <td>Địa chỉ Email</td>
                             <td>:</td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['email'] ?>" name="catName" class="medium" />

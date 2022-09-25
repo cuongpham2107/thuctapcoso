@@ -55,7 +55,7 @@
 	<div class="container">
 		<ol class="breadcrumb-page">
 			<li><a href="index-2.html">Trang chủ </a></li>
-			<li class="active"><a href="#">Payment Method</a></li>
+			<li class="active"><a href="#">Hình thức thanh toán</a></li>
 		</ol>
 	</div>
     <div class="content">
@@ -65,7 +65,7 @@
 	    		
 	    		<div class="clear"></div>
 	    		<div class="wrapper_method">
-		    		<h3 class="payment">Choose your method payment</h3>
+		    		<h3 class="payment">Chọn hình thức thanh toán</h3>
 		    		<a href="offlinepayment.php">Nhận hàng thanh toán</a>
 		    		<!-- <a href="onlinepayment.php">Online Payment</a><br><br><br> -->
 		    		<a style="background:grey" href="cart.php"> << Quay lại giỏ hàng</a>

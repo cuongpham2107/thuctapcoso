@@ -57,15 +57,26 @@
                         <input type="file" name="image" />
                     </td>
                 </tr>
-				<tr>
+                <tr>
                     <td>
                         <label>Trạng thái</label>
                     </td>
                     <td>
-                        <select id="select" name="type">
+                        <select id="select" name="status">
                             <option>--Trạng thái--</option>
                             <option value="1">Hiện</option>
                             <option value="0">Ẩn</option>
+                        </select>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Thuộc Trang</label>
+                    </td>
+                    <td>
+                        <select id="select" name="type">
+                            <option value="0">About</option>
+                            <option value="1">Page</option>
                         </select>
                     </td>
                 </tr>

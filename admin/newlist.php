@@ -28,14 +28,15 @@
 					<th>Mô tả</th>
 					<th>Nội dung</th>
 					<th>Hình ảnh</th>
-					<th>Type</th>
+					<th>Trạng thái</th>
+					<th>Thuộc trang</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 			
-				$newlist = $new->show_new();
+				$newlist = $new->show_new_all();
 				if($newlist){
 					$i = 0;
 					while($result = $newlist->fetch_assoc()){
@@ -48,10 +49,17 @@
                     <td><?php echo $fm->textShorten($result['body'], 20); ?></td>
 					<td><img src="uploads/<?php echo $result['image'] ?>" width="80"></td>
 					<td><?php 
-						if($result['type']==0){
+						if($result['status']==0){
 							echo 'Ẩn';
 						}else{
 							echo 'Hiện';
+						}
+					?></td>
+					<td><?php 
+						if($result['type']==0){
+							echo 'About';
+						}else{
+							echo 'Page';
 						}
 					?></td>
 					

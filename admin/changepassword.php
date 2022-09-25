@@ -2,13 +2,13 @@
 <?php include 'inc/sidebar.php';?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Change Password</h2>
+        <h2>Đổi mật khẩu</h2>
         <div class="block">               
          <form>
             <table class="form">					
                 <tr>
                     <td>
-                        <label>Old Password</label>
+                        <label>Mật khẩu cũ</label>
                     </td>
                     <td>
                         <input type="password" placeholder="Enter Old Password..."  name="title" class="medium" />
@@ -16,7 +16,7 @@
                 </tr>
 				 <tr>
                     <td>
-                        <label>New Password</label>
+                        <label>Mật khẩu mới</label>
                     </td>
                     <td>
                         <input type="password" placeholder="Enter New Password..." name="slogan" class="medium" />

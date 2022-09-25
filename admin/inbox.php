@@ -27,7 +27,7 @@ include_once ($filepath.'/../helpers/format.php');
 
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Inbox</h2>
+                <h2>Đơn hàng</h2>
                 <div class="block">
                 <?php 
                 if(isset($shifted)){
@@ -45,13 +45,13 @@ include_once ($filepath.'/../helpers/format.php');
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>Order Time</th>
-							<th>Product</th>
-							<th>Quantity</th>
-							<th>Price</th>
-							<th>Customer ID</th>
-							<th>Address</th>
-							<th>Action</th>
+							<th>Thời gian đặt</th>
+							<th>Sản phẩm</th>
+							<th>Số lượng</th>
+							<th>Giá</th>
+							<th>ID khách hàng</th>
+							<th>Địa chỉ</th>
+							<th>Hàng đôngj</th>
 						</tr>
 					</thead>
 					<tbody>

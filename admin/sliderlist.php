@@ -19,7 +19,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Slider List</h2>
+        <h2>Danh sách banner</h2>
         <div class="block"> 
         <?php
         if(isset($del_slider)){
@@ -30,10 +30,10 @@
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Slider Title</th>
-					<th>Slider Image</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>Tiêu đề</th>
+					<th>Banner</th>
+					<th>Trạng thái</th>
+					<th>Hàng động</th>
 				</tr>
 			</thead>
 			<tbody>

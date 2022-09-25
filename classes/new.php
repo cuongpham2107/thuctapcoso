@@ -24,6 +24,7 @@
 			$title = mysqli_real_escape_string($this->db->link, $data['title']);
 			$description = mysqli_real_escape_string($this->db->link, $data['description']);
 			$body = mysqli_real_escape_string($this->db->link, $data['body']);
+			$status = mysqli_real_escape_string($this->db->link, $data['status']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -36,13 +37,13 @@
 			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 			
-			if($title=="" || $description=="" || $body=="" || $type=="" || $file_name ==""){
+			if($title=="" || $description=="" || $body=="" || $status=="" || $type=="" || $file_name ==""){
 				$alert = "<span class='error'>Fields must be not empty</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);
-				$query = "INSERT INTO tbl_news(title,description,body,type,image) 
-                VALUES('$title','$description','$body','$type','$unique_image')";
+				$query = "INSERT INTO tbl_news(title,description,body,status,type,image) 
+                VALUES('$title','$description','$body','$status','$type','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
 					$alert = "<span class='success'>Thêm bài viết thành công</span>";
@@ -58,6 +59,7 @@
 			$title = mysqli_real_escape_string($this->db->link, $data['title']);
 			$description = mysqli_real_escape_string($this->db->link, $data['description']);
 			$body = mysqli_real_escape_string($this->db->link, $data['body']);
+			$status = mysqli_real_escape_string($this->db->link, $data['status']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
@@ -73,7 +75,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 
-			if($title=="" || $description=="" || $body=="" || $type==""){
+			if($title=="" || $description=="" || $body=="" || $status==""||$type == ""){
 				$alert = "<span class='error'>Các trường không được để trống!</span>";
 				return $alert;
 			}else{
@@ -95,6 +97,7 @@
 					title = '$title',
 					description = '$description',
 					body = '$body', 
+					status = '$status', 
 					type = '$type', 
 					image = '$unique_image'
 					WHERE newId = '$id'";
@@ -105,6 +108,7 @@
                     title = '$title',
 					description = '$description',
 					body = '$body', 
+					status = '$status',
 					type = '$type'
 					WHERE newId = '$id'";
 					
@@ -133,8 +137,18 @@
 			}
 			
 		}
-		public function show_new(){
+		public function show_new_all(){
 			$query = "SELECT * FROM tbl_news order by newId desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function show_new(){
+			$query = "SELECT * FROM tbl_news where type = 1 order by newId desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function show_about(){
+			$query = "SELECT * FROM tbl_news where type = 0 LIMIT 1" ;
 			$result = $this->db->select($query);
 			return $result;
 		}
