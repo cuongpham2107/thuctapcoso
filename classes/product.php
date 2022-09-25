@@ -57,10 +57,10 @@
 				$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,product_body,price,sale_price,type,image) VALUES('$productName','$brand','$category','$product_desc','$product_body','$price','$sale_price','$type','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
-					$alert = "<span class='success'>Insert Product Successfully</span>";
+					$alert = "<span class='success'>Thêm sản phẩm thành công</span>";
 					return $alert;
 				}else{
-					$alert = "<span class='error'>Insert Product Not Success</span>";
+					$alert = "<span class='error'>Thêm sản phẩm thất bại</span>";
 					return $alert;
 				}
 			}
@@ -84,30 +84,30 @@
 
 
 			if($sliderName=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Các trường không được để trống</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 2048000) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước hình ảnh phải nhỏ hơn 2MB!</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
 				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
 					$query = "INSERT INTO tbl_slider(sliderName,type,slider_image) VALUES('$sliderName','$type','$unique_image')";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Slider Added Successfully</span>";
+						$alert = "<span class='success'>Thêm Banner Thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Slider Added Not Success</span>";
+						$alert = "<span class='error'>Thêm Banner Thất bại</span>";
 						return $alert;
 					}
 				}
@@ -162,10 +162,10 @@
 			$query = "DELETE FROM tbl_slider where sliderId = '$id'";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Slider Deleted Successfully</span>";
+				$alert = "<span class='success'>Đã xóa Banner thành công</span>";
 				return $alert;
 			}else{
-				$alert = "<span class='error'>Slider Deleted Not Success</span>";
+				$alert = "<span class='error'>Xoá Banner không thành công</span>";
 				return $alert;
 			}
 		}
@@ -193,14 +193,14 @@
 
 
 			if($productName=="" || $brand=="" || $category=="" || $product_desc==""|| $product_body=="" || $price=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Các trường không được để trống</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 500000) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước hình ảnh phải nhỏ hơn %MB!</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
@@ -239,10 +239,10 @@
 				}
 				$result = $this->db->update($query);
 					if($result){
-						$alert = "<span class='success'>Product Updated Successfully</span>";
+						$alert = "<span class='success'>Đã cập nhật sản phẩm thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Product Updated Not Success</span>";
+						$alert = "<span class='error'>Sản phẩm được cập nhật không thành công</span>";
 						return $alert;
 					}
 				
@@ -253,10 +253,10 @@
 			$query = "DELETE FROM tbl_product where productId = '$id'";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Product Deleted Successfully</span>";
+				$alert = "<span class='success'>Sản phẩm đã được xóa thành công</span>";
 				return $alert;
 			}else{
-				$alert = "<span class='error'>Product Deleted Not Success</span>";
+				$alert = "<span class='error'>Sản phẩm bị xóa không thành công</span>";
 				return $alert;
 			}
 			
@@ -345,7 +345,7 @@
 			$result_check_compare = $this->db->select($check_compare);
 
 			if($result_check_compare){
-				$msg = "<span class='error'>Product Already Added to Compare</span>";
+				$msg = "<span class='error'>Sản phẩm đã được thêm vào để so sánh</span>";
 				return $msg;
 			}else{
 
@@ -362,10 +362,10 @@
 			$insert_compare = $this->db->insert($query_insert);
 
 			if($insert_compare){
-						$alert = "<span class='success'>Added Compare Successfully</span>";
+						$alert = "<span class='success'>Đã thêm So sánh thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Added Compare Not Success</span>";
+						$alert = "<span class='error'>Đã thêm So sánh Không thành công</span>";
 						return $alert;
 					}
 			}
@@ -378,7 +378,7 @@
 			$result_check_wlist = $this->db->select($check_wlist);
 
 			if($result_check_wlist){
-				$msg = "<span class='error'>Product Already Added to Wishlist</span>";
+				$msg = "<span class='error'>Sản phẩm đã được thêm vào danh sách yêu thích</span>";
 				return $msg;
 			}else{
 
@@ -395,10 +395,10 @@
 			$insert_wlist = $this->db->insert($query_insert);
 
 			if($insert_wlist){
-						$alert = "<span class='success'>Added to Wishlist Successfully</span>";
+						$alert = "<span class='success'>Đã thêm vào danh sách yêu thích thành công </span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Added to Wishlist Not Success</span>";
+						$alert = "<span class='error'>Đã thêm vào danh sách yêu thích không thành công</span>";
 						return $alert;
 					}
 			}

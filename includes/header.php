@@ -137,7 +137,7 @@ header("Cache-Control: max-age=2592000");
 				<div class="container">
 					<!-- hotline -->
 					<ul class="nav-top-left">
-						<li><a href="#">Welcome to Dagon Shop</a></li>
+						<li><a href="#">Chào mừng đến website Bán máy tính</a></li>
 					</ul><!-- hotline -->
 					<!-- heder links -->
 					<ul class="nav-top-right dagon-nav">
@@ -197,13 +197,19 @@ header("Cache-Control: max-age=2592000");
 				</div>
 			</div> <!-- header-top -->
 			<!-- header-content -->
+			<?php
+            $get_setting = $setting->getSetting();
+            if($get_setting){
+                while($result = $get_setting->fetch_assoc()){
+                
+            ?>
 			<div class="header-content">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-2 nav-left">
 							<!-- logo -->
 							<strong class="logo">
-								<a href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
+								<a href="../index.php"><img style="width: 70px;" src="admin/uploads/<?php echo $result['logo'] ?>" alt="logo"></a>
 							</strong>
 							<!-- logo -->
 						</div>
@@ -297,6 +303,7 @@ header("Cache-Control: max-age=2592000");
 					</div>
 				</div>
 			</div><!-- header-content -->
+			<?php } } ?>
 			<!-- header-menu-bar -->
 			<div class="header-menu-bar header-sticky">
 				<div class="header-menu-nav menu-style-2">
@@ -314,172 +321,24 @@ header("Cache-Control: max-age=2592000");
                                         <span></span>
 
                                     </span>
-                                <span class="title-menu">All Departments</span>
+                                <span class="title-menu">Danh mục sản phẩm</span>
                             </h4>
                             <div class="vertical-menu-content">
                                 <span class="btn-close hidden-md"><i class="flaticon-close"
                                                                      aria-hidden="true"></i></span>
                                 <ul class="vertical-menu-list">
-                                    <li><a href="#">New Arrivals</a></li>
-                                    <li class="menu-item-has-children arrow item-megamenu">
-                                        <a href="#" class="dropdown-toggle">Tv & Audio</a>
-                                        <span class="toggle-submenu hidden-md"></span>
-                                        <div class="submenu parent-megamenu megamenu">
-                                            <div class="row">
-                                                <div class="submenu-banner submenu-banner-menu-1">
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Smartphone</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Monitors
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Tablet</a></li>
-                                                                    <li class="menu-item"><a href="#">Computer
-                                                                        </a></li>
-                                                                    <li class="menu-item"><a href="#">Bestseller</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Top Rated</a></li>
-                                                                    <li class="menu-item"><a href="#">Office</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Networking</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Computer</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Smart
-                                                                        Computer</a></li>
-                                                                    <li class="menu-item"><a href="#">Bluetooth
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Soundbars</a></li>
-                                                                    <li class="menu-item"><a href="#">
-                                                                        Computer</a></li>
-                                                                    <li class="menu-item"><a href="#">New Arrivals</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Monitors</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="menu-item-has-children arrow item-megamenu">
-                                        <a href="#" class="dropdown-toggle">Laptop</a>
-                                        <span class="toggle-submenu hidden-md"></span>
-                                        <div class="submenu parent-megamenu megamenu">
-                                            <div class="row">
-                                                <div class="submenu-banner submenu-banner-menu-1">
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Smartphone</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Monitors
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Tablet</a></li>
-                                                                    <li class="menu-item"><a href="#">Computer
-                                                                        </a></li>
-                                                                    <li class="menu-item"><a href="#">Bestseller</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Top Rated</a></li>
-                                                                    <li class="menu-item"><a href="#">Office</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Networking</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Computer</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Smart
-                                                                        Computer</a></li>
-                                                                    <li class="menu-item"><a href="#">Bluetooth
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Soundbars</a></li>
-                                                                    <li class="menu-item"><a href="#">
-                                                                        Computer</a></li>
-                                                                    <li class="menu-item"><a href="#">New Arrivals</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Monitors</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Computer</a>
-                                    </li>
-                                    <li><a href="#">Smartphone </a></li>
-                                    <li class="menu-item-has-children arrow item-megamenu">
-                                        <a href="#" class="dropdown-toggle">Printers</a>
-                                        <span class="toggle-submenu hidden-md"></span>
-                                        <div class="submenu parent-megamenu megamenu">
-                                            <div class="row">
-                                                <div class="submenu-banner submenu-banner-menu-1">
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Camera</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Monitor
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Speakers</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Tablet
-                                                                        Computer</a></li>
-                                                                    <li class="menu-item"><a href="#">Monitors</a></li>
-                                                                    <li class="menu-item"><a href="#">Projector</a></li>
-                                                                    <li class="menu-item"><a href="#">Office</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Networking</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="dropdown-menu-info">
-                                                            <h6 class="dropdown-menu-title">Computer</h6>
-                                                            <div class="dropdown-menu-content">
-                                                                <ul class="menu">
-                                                                    <li class="menu-item"><a href="#">Computer</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Phone
-                                                                    </a></li>
-                                                                    <li class="menu-item"><a href="#">Printers</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Game & Consoles</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">New Arrivals</a>
-                                                                    </li>
-                                                                    <li class="menu-item"><a href="#">Monitors</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li><a href="#">Camera</a></li>
-                                    <li><a href="#">Game & Consoles</a></li>
-                                    <li><a href="#">Tablet</a></li>
-                                    <li><a href="#">Monitors</a></li>
-                                    <li><a href="#">Drivers</a></li>
+
+                                   
+                                    <?php 
+									$category = $cat->show_category_fontend();
+									foreach ($category as $key => $value) {
+										?>
+										<li class="mb-2">
+											<a href="productbycat.php?catid=<?php echo $value['catId'] ?>"><?php echo $value['catName'] ?></a>
+										</li>
+									<?php
+										}
+									?>
                                 </ul>
                             </div>
                         </div>

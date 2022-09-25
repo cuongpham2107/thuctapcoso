@@ -44,7 +44,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
 					<div class="toolbar-products">
 						<h4 class="title-product text-center">Tất cả sản phẩm</h4>
+						<?php 
+						if (isset($insertCart)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertCart; ?>
+							</div>
+						<?php 
+						}
 						
+						if (isset($insertCompare)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertCompare; ?>
+							</div>
+						<?php 
+							
+						}
+						
+						if (isset($insertWishlist)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertWishlist; ?>
+							</div>
+						<?php 
+						
+						}
+						 ?> 
 					</div>
 					<div class="products products-list products-grid">
 						<?php $product_list = $product->getproduct_list();
@@ -101,43 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 											</form>
 
 											<!-- <a href="#" class="btn-add-to-cart">Add to cart</a> -->
-											<form action="" method="POST">
-
-												<input type="hidden" name="productid" value="<?php echo $value['productId'] ?>" />
-
-
-												<?php
-
-												$login_check = Session::get('customer_login');
-												if ($login_check) {
-
-													echo '<input type="submit" class="wishlist" name="wishlist" value="Save to Wishlist">';
-												} else {
-													echo '';
-												}
-
-												?>
-
-
-
-											</form>
-											<form action="" method="POST">
-
-												<input type="hidden" name="productid" value="<?php echo $value['productId'] ?>" />
-
-												<?php
-
-												$login_check = Session::get('customer_login');
-												if ($login_check) {
-													echo '<input type="submit" class="compare" name="compare" value="Compare Product"/>' . '  ';
-												} else {
-													echo '';
-												}
-
-												?>
-
-
-											</form>
+											
 										</div>
 									</div>
 								</div>

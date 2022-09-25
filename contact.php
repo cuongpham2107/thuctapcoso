@@ -1,6 +1,10 @@
 <?php 
 	include 'includes/header.php';
-
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+        
+        $insertContact = $cs->insert_contact($_POST);
+        
+    }
 ?>
 
 <!-- MAIN -->
@@ -18,19 +22,31 @@
 			</div>
 			<form class="form-contact" action="#" method="post">
 				<div class="col-md-5">
+				
 					<div class="contact-info">
-						<h5 class="title-contact">Gửi lời nhắn cho chúng tôi</h5>
+						<h5 class="title-contact">Gửi lời nhắn cho chúng tôi</h5>	
+						<?php
+							if(isset($insertContact)){
+								?>
+								
+								<div class="alert alert-success" role="alert">
+									<?php echo $insertContact; ?>
+								</div>
+								
+								<?php
+							}
+						?>   
 						<p class="form-row form-row-wide">
 							<label>Tên của bạn<span class="required">*</span></label>
-							<input type="text" value="" name="text" placeholder="Họ và tên" class="input-text">
+							<input type="text" value="" name="name" placeholder="Họ và tên" class="input-text">
 						</p>
 						<p class="form-row form-row-wide">
 							<label>Địa chỉ Email<span class="required">*</span></label>
-							<input type="email" value="" name="text" placeholder="Email" class="input-text">
+							<input type="email" value="" name="email" placeholder="Email" class="input-text">
 						</p>
 						<p class="form-row form-row-wide">
 							<label>Số điện thoai<span class="required"></span></label>
-							<input type="text" value="" name="text" placeholder="Số điện thoai" class="input-text">
+							<input type="text" value="" name="phone" placeholder="Số điện thoai" class="input-text">
 						</p>
 					</div>
 				</div>
@@ -41,28 +57,35 @@
 									name="message"></textarea>
 					</p>
 					<p class="form-row">
-						<input type="submit" value="Gửi" name="Submit" class="button-submit">
+						<input type="submit" value="Gửi" name="submit" class="button-submit">
 					</p>
 				</div>
 			</form>
+			<?php
+            $get_setting = $setting->getSetting();
+            if($get_setting){
+                while($result = $get_setting->fetch_assoc()){
+                
+            ?>
 			<div class="col-md-3 contact-detail">
 				<h5 class="title-contact">Thông tin liên hệ của chúng tôi</h5>
 				<div class="contacts-info ">
 					<div class="contact-icon"><i class="flaticon-email" aria-hidden="true"></i></div>
 					<h4 class="title-info">Email</h4>
-					<div class="info-detail"> abc123@gmail.com</div>
+					<div class="info-detail"> <?php echo $result['email'] ?></div>
 				</div>
 				<div class="contacts-info ">
 					<div class="contact-icon"><i class="flaticon-telephone" aria-hidden="true"></i></div>
 					<h4 class="title-info">Số điện thoại</h4>
-					<div class="info-detail">0123-465-789</div>
+					<div class="info-detail"><?php echo $result['phone'] ?></div>
 				</div>
 				<div class="contacts-info ">
 					<div class="contact-icon"><i class="flaticon-placeholder" aria-hidden="true"></i></div>
 					<h4 class="title-info">Địa chỉ</h4>
-					<div class="info-detail">1 Hùng Vương, Quán Thánh, Ba Đình, Hà Nội </div>
+					<div class="info-detail"><?php echo $result['address'] ?></div>
 				</div>
 			</div>
+			<?php }} ?>
 		</div>
 	</div>
 </main><!-- end MAIN -->

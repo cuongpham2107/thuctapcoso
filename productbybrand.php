@@ -62,8 +62,34 @@ if (isset($insertWishlist)) {
 						while($result_name = $name_brand->fetch_assoc()){
 					?>
 					<div class="toolbar-products">
-						<h4 class="title-product text-center">sản phẩm thuộc thương hiệu : <?php echo $result_name['brandName'] ?></h4>
+						<h4 class="title-product text-center">Sản phẩm thuộc thương hiệu : <?php echo $result_name['brandName'] ?></h4>
+						<?php 
+						if (isset($insertCart)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertCart; ?>
+							</div>
+						<?php 
+						}
 						
+						if (isset($insertCompare)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertCompare; ?>
+							</div>
+						<?php 
+							
+						}
+						
+						if (isset($insertWishlist)) {
+							?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $insertWishlist; ?>
+							</div>
+						<?php 
+						
+						}
+						 ?> 
 					</div>
 
 					<?php }} ?>

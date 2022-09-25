@@ -97,7 +97,43 @@
 			}
 		}
 		
-		
+		public function list_contact()
+		{
+			$query = "SELECT * FROM tbl_contact order by id desc ";
+			$result = $this->db->select($query);
+			return $result;
+		} 
+		public function contactByid($id){
+			$query = "SELECT * FROM tbl_contact where id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function insert_contact($data)
+		{
+			$name = mysqli_real_escape_string($this->db->link, $data['name']);
+			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+			$email = mysqli_real_escape_string($this->db->link, $data['email']);
+			$message = mysqli_real_escape_string($this->db->link, $data['message']);
+			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
+			
+			
+			if($name=="" || $phone=="" || $email=="" || $message=="" ){
+				$alert = "<span class='error'>Các trường không được để trống</span>";
+				return $alert;
+			}else{
+				
+				$query = "INSERT INTO tbl_contact(name,phone,email,message) 
+                VALUES('$name','$phone','$email','$message')";
+				$result = $this->db->insert($query);
+				if($result){
+					$alert = "<span class='success'>Gửi liên hệ thành công</span>";
+					return $alert;
+				}else{
+					$alert = "<span class='error'>Gửi liên hệ khôgn thành công</span>";
+					return $alert;
+				}
+			}
+		}
 
 
 	}

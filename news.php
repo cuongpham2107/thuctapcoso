@@ -25,11 +25,11 @@ include 'includes/header.php';
                             <div class="post-grid-item col-md-6">
                                 <div class="post-item">
                                     <div class="post-thumb">
-                                        <a href="#"><img class="h-[40rem] w-full object-cover" src="admin/uploads/<?php echo $value['image'] ?>" alt="post-image"></a>
+                                        <a href="newsdetails.php?newid=<?php echo $value['newId'] ?>"><img class="h-[40rem] w-full object-cover" src="admin/uploads/<?php echo $value['image'] ?>" alt="post-image"></a>
                                         <span class="date">22<span>Dec</span></span>
                                     </div>
                                     <div class="post-item-info">
-                                        <h3 class="post-name"><a href="#"><?php echo $fm->textShorten($value['title'], 150) ?></a>
+                                        <h3 class="post-name"><a href="newsdetails.php?newid=<?php echo $value['newId'] ?>"><?php echo $fm->textShorten($value['title'], 150) ?></a>
                                         </h3>
                                         <div class="post-metas">
                                             <span class="author">Người đăng: <span>Admin</span></span>
@@ -37,7 +37,7 @@ include 'includes/header.php';
                                         </div>
                                         <div class="post-content">
                                             <p><?php echo $fm->textShorten($value['description'], 150) ?></p>
-                                            <a href="#" class="read-more">Xem thêm</a>
+                                            <a href="newsdetails.php?newid=<?php echo $value['newId'] ?>" class="read-more">Xem thêm</a>
                                         </div>
                                     </div>
                                 </div>

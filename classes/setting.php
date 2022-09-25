@@ -52,14 +52,14 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 			if($title=="" || $description=="" || $phone=="" || $email==""|| $address=="" || $link_facebook=="" || $link_youtobe==""|| $body=="" || $link_twitter=="" || $link_instagram==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Các trường không được để trống</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name) || !empty($file_name1)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 500000 ) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước ảnh phải nhỏ hơn 2MB</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
@@ -80,7 +80,7 @@
 					link_youtobe = '$link_youtobe',
 					link_twitter = '$link_twitter',
 					link_instagram = '$link_instagram',
-					logo = '$unique_image',
+					logo = '$unique_image'
 					WHERE id = '$id'";
 					
 				}else{

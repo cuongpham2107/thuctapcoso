@@ -38,6 +38,11 @@
                       
                     </ul>
                 </li>
+                <li><a class="menuitem">Liên hệ</a>
+                    <ul class="submenu">
+                        <li><a href="lienhe.php">Danh sách liên hệ</a> </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="setting.php" class="menuitem">Cài đặt</a>
                     <ul class="submenu">

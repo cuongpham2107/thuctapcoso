@@ -38,7 +38,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 			
 			if($title=="" || $description=="" || $body=="" || $status=="" || $type=="" || $file_name ==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Các trường không được để trống</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);

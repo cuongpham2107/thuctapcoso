@@ -35,7 +35,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 			
 			if(empty($catName) || empty($file_name)){
-				$alert = "<span class='error'>Category must be not empty</span>";
+				$alert = "<span class='error'>Danh mục không được để trống</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);
@@ -43,10 +43,10 @@
 				$query = "INSERT INTO tbl_category(catName,image) VALUES('$catName','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
-					$alert = "<span class='success'>Insert Category Successfully</span>";
+					$alert = "<span class='success'>Thêm danh mục thành công</span>";
 					return $alert;
 				}else{
-					$alert = "<span class='error'>Insert Category Not Success</span>";
+					$alert = "<span class='error'>Thêm danh mục thất bại</span>";
 					return $alert;
 				}
 			}
@@ -75,7 +75,7 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 			if(empty($catName)){
-				$alert = "<span class='error'>Category must be not empty</span>";
+				$alert = "<span class='error'>Các trường danh mục không được để trống</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
@@ -105,10 +105,10 @@
 				}
 				$result = $this->db->update($query);
 				if($result){
-					$alert = "<span class='success'>Category Updated Successfully</span>";
+					$alert = "<span class='success'>Cập nhật danh mục thành công</span>";
 					return $alert;
 				}else{
-					$alert = "<span class='error'>Category Updated Not Success</span>";
+					$alert = "<span class='error'>Cập nhật danh mục thất bại</span>";
 					return $alert;
 				}
 			}
@@ -118,10 +118,10 @@
 			$query = "DELETE FROM tbl_category where catId = '$id'";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Category Deleted Successfully</span>";
+				$alert = "<span class='success'>Xoá danh mục thành công</span>";
 				return $alert;
 			}else{
-				$alert = "<span class='error'>Category Deleted Not Success</span>";
+				$alert = "<span class='error'>Xoá danh mục thất bại</span>";
 				return $alert;
 			}
 			

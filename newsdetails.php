@@ -1,5 +1,11 @@
 <?php
 include 'includes/header.php';
+
+if (!isset($_GET['newid']) || $_GET['newid'] == NULL) {
+	echo "<script>window.location ='404.php'</script>";
+} else {
+	$id = $_GET['newid'];
+}
 ?>
 
 <!-- MAIN -->
@@ -12,63 +18,37 @@ include 'includes/header.php';
         </div>
         <div class="container">
             <div class="row">
+                <?php 
+                    $get_new = $new->getnewbyId($id);
+                    if ($get_new) {
+                        while ($result_details = $get_new->fetch_assoc()) {
+                
+                
+                ?>
                 <div class="col-md-9 col-sm-8 ">
                     <div class="main-content">
                         <div class="post-detail">
                             <div class="post-item">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="assets/images/blog/post-image.jpg" alt="post-image"></a>
+                                    <a href="#"><img src="admin/uploads/<?php echo $result_details['image'] ?>" alt="post-image"></a>
                                     <span class="date">22<span>Dec</span></span>
                                 </div>
                                 <div class="post-item-info">
-                                    <h3 class="post-name"><a href="#">It’s all about the bread: whole grain home</a></h3>
-                                    <div class="post-metas">
+                                    <h3 class="post-name"><a href="#"><?php echo $result_details['title'] ?></a></h3>
+                                    <!-- <div class="post-metas">
                                         <span class="author">Post by: <span>Admin</span></span>
                                         <span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>3 Comments</span>
-                                    </div>
+                                    </div> -->
                                     <div class="post-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam
-                                            erat. Duis velit lectus, posuere a blandit sit amet, tempor at lorem. Donec
-                                            ultricies, lorem sed ultrices interdum, leo metus luctus sem, vel vulputate
-                                            diam ipsum sed lorem. Donec tempor arcu nisl, et molestie massa scelerisque
-                                            ut. Nunc at rutrum leo. Mauris metus mauris, tristique quis sapien eu,
-                                            rutrum vulputate enim.</p>
-                                        <blockquote>Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae
-                                            ullamcorper. Proin sed ultrices erat. Praesent varius ultrices massa at
-                                            faucibus. Aenean dignissim, orci sed faucibus pharetra
-                                        </blockquote>
-                                        <p>Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.
-                                            Aliquam non tincidunt urna. Integer tincidunt nec nisl vitae ullamcorper.
-                                            Proin sed ultrices erat. Praesent varius ultrices massa at faucibus. Aenean
-                                            dignissim, orci sed faucibus pharetra, dui mi dignissim tortor, sit amet
-                                            condimentum mi ligula sit amet augue. Pellentesque vitae eros eget enim
-                                            mollis placerat.</p>
+                                        <p><?php echo $result_details['body'] ?></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="post-footer">
-                                <div class="tag">
-                                    <span>Tags:</span>
-                                    <a href="#">Bottles,</a>
-                                    <a href="#">Computer,</a>
-                                    <a href="#">Printers</a>
-                                </div>
-                                <div class="post-authur">
-                                    <div class="avata"><a href="#"><img src="assets/images/blog/avata-admin.jpg"
-                                                                       alt="avata-admin"></a></div>
-                                    <div class="des">
-                                        <strong>Admin</strong>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. It has survived not only five centuries...</p>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="post-comments">
-                            <div class="block-title">Leave a Reply</div>
-                            <p>Your email address will not be published. Required fields are marked *</p>
+                            <div class="block-title">Comment Face</div>
+                            <!-- <p>Your email address will not be published. Required fields are marked *</p>
                             <div class="block-content">
                                 <form>
                                     <div class="form-group col-md-6 padding-left">
@@ -89,10 +69,11 @@ include 'includes/header.php';
                                     </div>
                                     <button type="submit" class="btn-comment">Post Comment</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
+                <?php }} ?>
                 <div class="col-md-3 col-sm-4">
                     <div class="sidebar-left">
                         <div class="block-search-blog">
@@ -106,312 +87,18 @@ include 'includes/header.php';
                             </form>
                         </div>
                         <div class="block-recent-post-blog">
-                            <div class="block-title">Recent Post</div>
+                            <div class="block-title">Bài viết mới nhất</div>
                             <ul>
-                                <li class="recent-post-item"><a href="#">Gallery Post with Supported Animation</a></li>
-                                <li class="recent-post-item"><a href="#">Announcement – Standard Post without Image</a>
-                                </li>
-                                <li class="recent-post-item"><a href="#">We’re the best Designers from UK</a></li>
-                                <li class="recent-post-item"><a href="#">A Beautiful Day – Standard Post with Image</a>
-                                </li>
+                                <?php 
+                                    $news = $new->show_new();
+                                    foreach ($news as $key => $value) {
+                                ?>
+                           
+                                <li class="recent-post-item"><a href="newsdetails.php?newid=<?php echo $value['newId'] ?>"><?php echo $fm->textShorten($value['title'], 60) ?></a></li>
+
+                                <?php } ?>
+                                
                             </ul>
-                        </div>
-                        <div class="block-categories-blog">
-                            <div class="block-title">Blog categories</div>
-                            <ul>
-                                <li class="categories-item"><a href="#">All about Digital</a></li>
-                                <li class="categories-item"><a href="#">Smartphone & Tablett</a></li>
-                                <li class="categories-item"><a href="#">Camera</a></li>
-                                <li class="categories-item"><a href="#">Printer & ink</a></li>
-                                <li class="categories-item"><a href="#">Cameras</a></li>
-                            </ul>
-                        </div>
-                        <div class="block-latest-roducts">
-                            <div class="block-title">Latest Products</div>
-                            <div class="block-latest-roducts-content">
-                                <div class="owl-carousel nav-style2" data-nav="false" data-autoplay="false"
-                                     data-dots="false" data-loop="true" data-margin="0"
-                                     data-responsive='{"0":{"items":1},"600":{"items":1},"1000":{"items":1}}'>
-                                    <div class="owl-ones-row">
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p1.jpg" alt="p1"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Homasy Portable</a></div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p2.jpg" alt="p2"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Lexani Forged</a>
-                                                    </div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p3.jpg" alt="p3"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Custom Laptop
-                                                        </a></div>
-                                                    <span class="price price-dark">
-
-                                                                <ins>$229.00</ins>
-
-                                                            </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p4.jpg" alt="p4"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Pocket RC Drone </a>
-                                                    </div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-ones-row">
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p1.jpg" alt="p1"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Homasy Portable</a></div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p2.jpg" alt="p2"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Lexani Forged</a>
-                                                    </div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p3.jpg" alt="p3"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Custom Laptop
-                                                        </a></div>
-                                                    <span class="price price-dark">
-
-                                                                <ins>$229.00</ins>
-
-                                                            </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-item style1">
-                                            <div class="product-inner">
-                                                <div class="product-thumb">
-                                                    <div class="thumb-inner">
-                                                        <a href="#"><img src="assets/images/blog/p4.jpg" alt="p4"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-innfo">
-                                                    <div class="product-name"><a href="#">Pocket RC Drone </a>
-                                                    </div>
-                                                    <span class="price">
-
-                                                            <ins>$229.00</ins>
-
-                                                            <del>$259.00</del>
-
-                                                        </span>
-                                                    <span class="star-rating">
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-
-                                                            <span class="review">5 Review(s)</span>
-
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

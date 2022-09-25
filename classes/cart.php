@@ -27,7 +27,7 @@
 			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
 			$result_check_cart = $this->db->select($check_cart);
 			if($result_check_cart){
-				$msg = "<span class='error'>Product Already Added</span>";
+				$msg = "<span class='error'>Sản phẩm đã được thêm vào giỏ</span>";
 				return $msg;
 			}else{
 
@@ -69,9 +69,9 @@
 					WHERE cartId = '$cartId'";
 			$result = $this->db->update($query);
 			if($result){
-				header('Location:cart.php');
+				echo "<script>window.location ='cart.php'</script>";
 			}else{
-				$msg = "<span class='error'>Product Quantity Updated Not Successfully</span>";
+				$msg = "<span class='error'>Số lượng sản phẩm được cập nhật không thành công</span>";
 				return $msg;
 			}
 		
@@ -82,9 +82,10 @@
 			$result = $this->db->delete($query);
 			if($result){
 				
-				header('Location:cart.php');
+				echo "<script>window.location ='cart.php'</script>";
+				
 			}else{
-				$msg = "<span class='error'>Product Deleted Not Successfully</span>";
+				$msg = "<span class='error'>Sản phẩm bị xóa không thành công</span>";
 				return $msg;
 			}
 		}
@@ -157,10 +158,10 @@
 					WHERE id = '$id' AND date_order='$time' AND price ='$price'";
 			$result = $this->db->update($query);
 			if($result){
-				$msg = "<span class='success'>Update Order Successfully</span>";
+				$msg = "<span class='success'>Cập nhật đơn hàng thành công</span>";
 				return $msg;
 			}else{
-				$msg = "<span class='error'>Update Order Not Successfully</span>";
+				$msg = "<span class='error'>Cập nhật đơn hàng không thành công</span>";
 				return $msg;
 			}
 		}
@@ -172,10 +173,10 @@
 					WHERE id = '$id' AND date_order='$time' AND price ='$price'";
 			$result = $this->db->update($query);
 			if($result){
-				$msg = "<span class='success'>Detele Order Successfully</span>";
+				$msg = "<span class='success'>Xóa đơn hàng thành công</span>";
 				return $msg;
 			}else{
-				$msg = "<span class='error'>Delete Order Not Successfully</span>";
+				$msg = "<span class='error'>Xóa đơn hàng không thành công</span>";
 				return $msg;
 			}
 		}
