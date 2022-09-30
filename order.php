@@ -23,7 +23,7 @@
     	<div class="cartoption">		
 			<div class="cartpage">
 			    <div class="order_page">
-			    	<h3>Order Page</h3>
+			    	<h3>Trang Oder</h3>
 			    </div>
 			</div>
 					

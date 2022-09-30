@@ -44,12 +44,12 @@
 						?>
                         <form class="login" method="post">
                             <p class="form-row form-row-wide">
-                                <label>Username or Email Address:<span class="required"></span></label>
+                                <label>Tài khoản :<span class="required"></span></label>
                                 <input type="text" value="" name="email"
                                        placeholder="Type your username or email address" class="input-text">
                             </p>
                             <p class="form-row form-row-wide">
-                                <label>Password:<span class="required"></span></label>
+                                <label>Mật khẩu:<span class="required"></span></label>
                                 <input type="password" name="password" placeholder="************" class="input-text">
                             </p>
                             
@@ -60,8 +60,8 @@
                         </form>
                     </div>
                     <div class="col-sm-6 border-after">
-                        <h5 class="title-login">Great an account</h5>
-                        <p class="p-title-login">Fersonal infomation</p>
+                        <h5 class="title-login">Tạo một tài khoản mới</h5>
+                        <p class="p-title-login">Thông tin tài khoản</p>
 						<?php
 							if(isset($insertCustomers)){
 								echo $insertCustomers;
@@ -81,7 +81,7 @@
                                 <input title="lastname" type="text" name="address" placeholder="Last name" class="input-text">
                             </p>
                             <p class="form-row form-row-wide">
-                                <label>Email Address<span class="required">*</span></label>
+                                <label>Địa chỉ Email<span class="required">*</span></label>
                                 <input title="email" type="email" name="email" placeholder="Email address" class="input-text">
                             </p>
                             

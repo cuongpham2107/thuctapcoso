@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="order-summary">
-                        <h4 class="title-shopping-cart">Order Summary</h4>
+                        <h4 class="title-shopping-cart">Tiền tạm tính</h4>
                         <div class="checkout-element-content">
 							<?php
 								$check_cart = $ct->check_cart();
@@ -155,7 +155,7 @@
 							
 							<?php
 							}else{
-								echo 'Your Cart is Empty ! Please Shopping Now';
+								echo 'Giỏ hàng của bạn đang trống rỗng! Vui lòng mua sắm ngay bây giờ';
 							}
 							?>
                         </div>

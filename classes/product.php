@@ -19,10 +19,22 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function search_product($tukhoa){
-			$tukhoa = $this->fm->validation($tukhoa);
-			$query = "SELECT * FROM tbl_product WHERE productName LIKE '%$tukhoa%'";
-			$result = $this->db->select($query);
+		public function search_product($tukhoa,$category){
+			// var_dump($category);
+			if($category == 'all'){
+				$tukhoa = $this->fm->validation($tukhoa);
+				$query = "SELECT * FROM tbl_product WHERE productName LIKE '%$tukhoa%'";
+				
+				$result = $this->db->select($query);
+				
+			}
+			else
+			{
+				$tukhoa = $this->fm->validation($tukhoa);
+				$query = "SELECT * FROM tbl_product WHERE productName LIKE '%$tukhoa%' AND catId = '$category'";
+				
+				$result = $this->db->select($query);
+			}
 			return $result;
 
 		}

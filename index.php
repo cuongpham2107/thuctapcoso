@@ -257,12 +257,12 @@ include 'includes/slider.php';
 <div class="mt-20">
 	<div class="container">
 		<div class="title-of-section"><span>Bài viết mới nhất</span></div>
-		<div class="flex justify-between space-x-4">
+		<div class=" grid grid-cols md:grid-cols-4  gap-4 ">
 			<?php
 				$news_list = $new->show_new();
 				foreach($news_list as $val){
 			?>
-			<div class="w-1/4">
+			<div class="">
 				<div class="w-auto p-2">
 					<a href="detailsNew.php?newid=<?php echo $val['newId'] ?>">
 					<img class="h-96 w-full object-fill" src="admin/uploads/<?php echo $val['image'] ?>" alt="blog1"></a>

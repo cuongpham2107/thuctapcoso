@@ -25,7 +25,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Compare Product</h2>
+			    	<h2>So sánh sản phẩm</h2>
 			    	<?php
 			    	 if(isset($update_quantity_cart)){
 			    	 	echo $update_quantity_cart;
@@ -38,11 +38,11 @@
 			    	?>
 						<table class="tblone">
 							<tr>
-								<th width="10%">ID Compare</th>
-								<th width="20%">Product Name</th>
-								<th width="20%">Image</th>
-								<th width="15%">Price</th>
-								<th width="15%">Action</th>
+								<th width="10%">ID  </th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="20%">Hình ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="15%">Hành động</th>
 	
 							</tr>
 							<?php

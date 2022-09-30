@@ -53,14 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 						<?php 
 						}
 						
-						if (isset($insertCompare)) {
-							?>
-							<div class="alert alert-success" role="alert">
-								<?php echo $insertCompare; ?>
-							</div>
-						<?php 
-							
-						}
 						
 						if (isset($insertWishlist)) {
 							?>
@@ -125,9 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 												<input type="hidden" name="product_id" value="<?php echo $value['productId'] ?>">
 												<input type="submit" class="btn-add-to-cart !p-5" name="submit" value="Thêm vào giỏ hàng" />
 											</form>
-
 											<!-- <a href="#" class="btn-add-to-cart">Add to cart</a> -->
-											
 										</div>
 									</div>
 								</div>
@@ -240,7 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 						</div>
 					</div> -->
 					<div class="block-latest-roducts">
-						<div class="block-title">Latest Products</div>
+						<div class="block-title">Sản phẩm mới nhất</div>
 						<div class="block-latest-roducts-content">
 							<div class="owl-carousel nav-style2" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="0" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":1},"992":{"items":1},"1200":{"items":1}}'>
 								<div class="owl-ones-row">
@@ -535,22 +525,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 <?php 
 
 
-if (isset($insertCart)) {
-	
-} 
-if (isset($insertCompare)) {
-}
-
-if (isset($insertWishlist)) {
-}
-?>
-
-
-
-
-
-
-<?php
 include 'includes/footer.php';
 
 ?>
+

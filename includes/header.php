@@ -88,7 +88,7 @@ header("Cache-Control: max-age=2592000");
 				</div>
 			</div>
 		</form>
-		<div id="block-quick-view-popup" class="block-quick-view-popup">
+		<!-- <div id="block-quick-view-popup" class="block-quick-view-popup">
 			<div class="quick-view-content">
 				<a href="#" class="popup-btn-close"><span class="flaticon-close"></span></a>
 				<div class="product-items">
@@ -129,7 +129,7 @@ header("Cache-Control: max-age=2592000");
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- HEADER -->
 		<header class="site-header header-opt-1">
 			<!-- header-top -->
@@ -217,39 +217,31 @@ header("Cache-Control: max-age=2592000");
 							<!-- block search -->
 							<div class="block-search">
 								<div class="block-content">
+								<form action="search.php" method="post">
 									<div class="categori-search ">
-										<select title="categories" data-placeholder="All Categories" class="chosen-select categori-search-option">
-											<option value="">All Categories</option>
-											<optgroup label="LifeStyle">
-												<option>Cell Phones</option>
-												<option>Game & Consoles</option>
-												<option>Smart Watchs</option>
-											</optgroup>
-											<optgroup label="Smartphone">
-												<option>Cell Phones</option>
-												<option>Game & Consoles</option>
-												<option>Smart Watchs</option>
-											</optgroup>
-											<optgroup label="LifeStyle">
-												<option>Cell Phones</option>
-												<option>Game & Consoles</option>
-												<option>Smart Watchs</option>
-											</optgroup>
-											<optgroup label="Smartphone">
-												<option>Cell Phones</option>
-												<option>Game & Consoles</option>
-												<option>Smart Watchs</option>
-											</optgroup>
+										<select title="categories" name="category" data-placeholder="All Categories" class="chosen-select categori-search-option">
+										<option value="all">Tất cả danh mục</option>
+											<?php 
+												$category = $cat->show_category_fontend();
+												foreach ($category as $key => $value) {
+											?>
+											
+											<option value="<?php echo $value['catId'] ?>"><?php echo $value['catName'] ?></option>
+											<?php
+												}
+											?>
 										</select>
+									
 									</div>
 									<div class="form-search">
-										<form action="search.php" method="post">
-											<div class="box-group">
-												<input type="text" name="tukhoa" class="form-control" placeholder="Search keyword here...">
-												<button name="search_product" class="btn btn-search" type="button"><span class="flaticon-magnifying-glass"></span></button>
-											</div>
-										</form>
+										<div class="box-group">
+											<input type="text" name="tukhoa" class="form-control" placeholder="Từ khoá...">
+											<button name="search_product" class="btn btn-search" type="submit">
+												<span class="flaticon-magnifying-glass"></span>
+											</button>
+										</div>
 									</div>
+									</form>
 								</div>
 							</div><!-- block search -->
 						</div>
@@ -343,7 +335,7 @@ header("Cache-Control: max-age=2592000");
                             </div>
                         </div>
 							<div class="header-menu header-menu-resize">
-								<ul class="header-nav dagon-nav flex ml-12 space-x-2">
+								<ul class="header-nav dagon-nav md:flex md:ml-12 space-x-2">
 									<li class="btn-close hidden-md"><i class="flaticon-close" aria-hidden="true"></i></li>
 									<li class="menu-item-has-children arrow">
 										<a href="index.php">Trang chủ</a>
