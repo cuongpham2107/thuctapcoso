@@ -44,29 +44,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
 					<div class="toolbar-products">
 						<h4 class="title-product text-center">Tất cả sản phẩm</h4>
-						<?php 
-						if (isset($insertCart)) {
-							?>
-							<div class="alert alert-success" role="alert">
-								<?php echo $insertCart; ?>
-							</div>
-						<?php 
-						}
-						
-						
-						if (isset($insertWishlist)) {
-							?>
-							<div class="alert alert-success" role="alert">
-								<?php echo $insertWishlist; ?>
-							</div>
-						<?php 
-						
-						}
-						 ?> 
 					</div>
 					<div class="products products-list products-grid">
-						<?php $product_list = $product->getproduct_list();
-						foreach ($product_list as $key => $value) {
+						<?php 
+						$limit  = 9;
+
+						$product_list = $product->getproduct_list();
+
+						$number_of_results = mysqli_num_rows($product_list);
+						
+
+						$number_f_pages = ceil($number_of_results/$limit);
+						
+						if(!isset($_GET['page'])){
+							$page = 1;
+						}
+						else{
+							$page= $_GET['page'];
+						}
+						$this_page_first_result = ($page-1)*$limit;
+
+						$product_pagination = $product->getproduct_pagination($limit,$this_page_first_result);
+						
+						// var_dump($product_pagination);
+
+						foreach ($product_pagination as $key => $value) {
 						?>
 
 							<div class="product-item style1 width-33 col-md-4 col-sm-6 col-xs-6">
@@ -111,13 +113,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 											<p>Size: One Size Fits All </p>
 											<p>Guarantee: 2 Year</p>
 										</div>
-										<div class="single-add-to-cart">
+										<div class="single-add-to-cart flex space-x-4 w-full items-center justify-between">
 											<form action="" method="post">
 												<input type="hidden" class="border p-4 text-center ml-2" name="quantity" value="1" min="1" />
 												<input type="hidden" name="product_id" value="<?php echo $value['productId'] ?>">
-												<input type="submit" class="btn-add-to-cart !p-5" name="submit" value="Thêm vào giỏ hàng" />
+												<input type="submit" class="btn-add-to-cart !mb-0 !p-5" name="submit" value="Thêm vào giỏ hàng" />
 											</form>
 											<!-- <a href="#" class="btn-add-to-cart">Add to cart</a> -->
+											<form action="" method="POST">
+
+												<input type="hidden" name="productid" value="<?php echo $value['productId'] ?>" />
+
+
+												<?php
+
+												$login_check = Session::get('customer_login');
+												if ($login_check) {
+
+													echo '<button type="submit" name="wishlist"><i class="fa fa-heart-o text-4xl text-red-500 bg-white" aria-hidden="true"></i></button>';
+												} else {
+													echo '';
+												}
+
+												?>
+
+
+											
+											</form>
 										</div>
 									</div>
 								</div>
@@ -128,10 +150,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 					</div>
 					<div class="pagination">
 						<ul class="nav-links">
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
+							<?php 
+								for($page = 1;$page <= $number_f_pages; $page++){
+									?>
+										<li class="<?php if($page == 1){echo 'active';}else{if(isset($_GET['page']) && $_GET['page'] == $page){echo 'active';} }   ?>"><a href="products.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+									<?php
+								}
+							?>
+							
+							<!-- <li><a href="#">2</a></li>
 							<li><a href="#">3</a></li>
-							<li class="back-next"><a href="#">Next</a></li>
+							<li class="back-next"><a href="#">Next</a></li> -->
 						</ul>
 					</div>
 				</div>

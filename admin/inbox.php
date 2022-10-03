@@ -49,9 +49,9 @@ include_once ($filepath.'/../helpers/format.php');
 							<th>Sản phẩm</th>
 							<th>Số lượng</th>
 							<th>Giá</th>
-							<th>ID khách hàng</th>
-							<th>Địa chỉ</th>
-							<th>Hàng đôngj</th>
+							<!-- <th>ID khách hàng</th> -->
+							<th>Thông tin khách đặt</th>
+							<th>Hàng động</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -67,30 +67,43 @@ include_once ($filepath.'/../helpers/format.php');
 						
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
-							<td><?php echo $fm->formatDate($result['date_order']) ?></td>
+							
+							<?php
+							if($result['status']==0){
+							?>
+								<td style="color: #224bdc;"><?php echo $fm->formatDate($result['date_order']) ?></td>
+							<?php
+							}elseif($result['status']==1){
+							?>
+								<td style="color:#dd0808"><?php echo $fm->formatDate($result['date_order']) ?></td>
+							<?php
+							}
+							?>
+							
+							
 							<td><?php echo $result['productName'] ?></td>
 							<td><?php echo $result['quantity'] ?></td>
 							<td><?php echo $result['price'].' '.'VNĐ' ?></td>
-							<td><?php echo $result['customer_id'] ?></td>
-							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">View Customer</a></td>
+							<!-- <td><?php echo $result['customer_id'] ?></td> -->
+							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">xem</a></td>
 							<td>
 							<?php 
 							if($result['status']==0){
 							?>
 
-								<a href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Pending</a>
+								<a href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Chờ duyệt</a>
 
 								<?php
 							}elseif($result['status']==1){
 								?>
 								<?php
-								echo 'Shifting...';
+								echo 'Đang giao hàng...';
 								?>
 							<?php
 							}elseif($result['status']==2){
 							?>
 
-							<a href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Remove</a>
+							<a href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xoá</a>
 
 							<?php
 								}

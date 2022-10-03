@@ -15,6 +15,7 @@
         	$delcart = $ct->del_product_cart($cartId);
         }
     }
+   
 ?>
 <?php
 	if(!isset($_GET['id'])){
@@ -32,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <form class="form-cart">
+                    <form class="form-cart" method="post">
                         <div class="table-cart">
 						<?php
 							if(isset($update_quantity_cart)){
@@ -70,15 +71,20 @@
 											<div class="product-name"><a href="#"><?php echo $result['productName'] ?></a></div>
 										</td>
 										<td class="tb-price">
-											<span class="price"><?php echo $fm->format_currency($result['price'])." "."VNĐ" ?></span>
+											<span class="price">
+                                                <?php 
+                                                    echo $fm->format_currency($result['price'])." "."VNĐ";
+                                                ?>
+                                            </span>
 										</td>
 										<td class="h-full my-auto flex-row space-x-4 !w-auto !border-t-0 items-center">
 											
-											<form action="" method="post" >
+											
 												<input type="hidden" name="cartId"  value="<?php echo $result['cartId'] ?>"/>
-												<input type="number" name="quantity" min="0" class="!w-16 p-2 border border-b-gray-700"  value="<?php echo $result['quantity'] ?>"/>
+												<input type="number" name="quantity" min="0" class="!w-16 p-2 border border-b-gray-700"  
+                                                value="<?php echo $result['quantity'] ?>"/>
 												<input type="submit" name="submit" class="w-40" value="Update"/>
-											</form>
+											
 												
 										</td>
 										<td class="tb-total">
@@ -90,7 +96,7 @@
 										<td class="tb-remove">
 											<a 	
 												onclick="return confirm('Are you want to delete?');" 
-												href="?cartid=<?php echo $result['cartId'] ?> class="action-remove">
+												href="?cartid=<?php echo $result['cartId'] ?>" class="action-remove">
 												<span>
 													<i class="flaticon-close" aria-hidden="true"></i>
 												</span>

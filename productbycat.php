@@ -132,11 +132,11 @@ if(!isset($_GET['catid']) || $_GET['catid']==NULL){
 											<p>Size: One Size Fits All </p>
 											<p>Guarantee: 2 Year</p>
 										</div>
-										<div class="single-add-to-cart flex space-x-4">
+										<div class="single-add-to-cart flex space-x-4 w-full items-center justify-between">
 											<form action="" method="post">
 												<input type="hidden" class="border p-4 text-center ml-2" name="quantity" value="1" min="1" />
 												<input type="hidden" name="product_id" value="<?php echo $value['productId'] ?>">
-												<input type="submit" class="btn-add-to-cart !p-5" name="submit" value="Thêm vào giỏ hàng" />
+												<input type="submit" class="btn-add-to-cart !mb-0 !p-5" name="submit" value="Thêm vào giỏ hàng" />
 											</form>
 
 											<!-- <a href="#" class="btn-add-to-cart">Add to cart</a> -->
@@ -150,7 +150,7 @@ if(!isset($_GET['catid']) || $_GET['catid']==NULL){
 												$login_check = Session::get('customer_login');
 												if ($login_check) {
 
-													echo '<button type="submit" name="wishlist" class="wishlist p-2"><i class="fa fa-heart-o" aria-hidden="true"></i></button>';
+													echo '<button type="submit" name="wishlist"><i class="fa fa-heart-o text-4xl text-red-500 bg-white" aria-hidden="true"></i></button>';
 												} else {
 													echo '';
 												}
@@ -158,23 +158,7 @@ if(!isset($_GET['catid']) || $_GET['catid']==NULL){
 												?>
 
 
-											</form>
-											<form action="" method="POST">
-
-												<input type="hidden" name="productid" value="<?php echo $value['productId'] ?>" />
-
-												<?php
-
-												$login_check = Session::get('customer_login');
-												if ($login_check) {
-													echo '<button type="submit"  name="compare" class="compare p-2"><i class="fa fa-exchange"></i></button>';
-												} else {
-													echo '';
-												}
-
-												?>
-
-
+											
 											</form>
 										</div>
 									</div>

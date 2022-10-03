@@ -28,17 +28,6 @@ if(!isset($_GET['brandid']) || $_GET['brandid']==NULL){
 	 $id = $_GET['brandid']; 
 }
 
-if (isset($insertCart)) {
-	echo $insertCart;
-}
-
-if (isset($insertCompare)) {
-	echo $insertCompare;
-}
-
-if (isset($insertWishlist)) {
-	echo $insertWishlist;
-}
 
 
 ?>
@@ -142,11 +131,11 @@ if (isset($insertWishlist)) {
 											<p>Size: One Size Fits All </p>
 											<p>Guarantee: 2 Year</p>
 										</div>
-										<div class="single-add-to-cart">
+										<div class="single-add-to-cart flex space-x-4 w-full items-center justify-between">
 											<form action="" method="post">
 												<input type="hidden" class="border p-4 text-center ml-2" name="quantity" value="1" min="1" />
 												<input type="hidden" name="product_id" value="<?php echo $value['productId'] ?>">
-												<input type="submit" class="btn-add-to-cart !p-5" name="submit" value="Thêm vào giỏ hàng" />
+												<input type="submit" class="btn-add-to-cart !mb-0 !p-5" name="submit" value="Thêm vào giỏ hàng" />
 											</form>
 
 											<!-- <a href="#" class="btn-add-to-cart">Add to cart</a> -->
@@ -160,7 +149,7 @@ if (isset($insertWishlist)) {
 												$login_check = Session::get('customer_login');
 												if ($login_check) {
 
-													echo '<input type="submit" class="wishlist" name="wishlist" value="Save to Wishlist">';
+													echo '<button type="submit" name="wishlist"><i class="fa fa-heart-o text-4xl text-red-500 bg-white" aria-hidden="true"></i></button>';
 												} else {
 													echo '';
 												}
@@ -168,24 +157,7 @@ if (isset($insertWishlist)) {
 												?>
 
 
-
-											</form>
-											<form action="" method="POST">
-
-												<input type="hidden" name="productid" value="<?php echo $value['productId'] ?>" />
-
-												<?php
-
-												$login_check = Session::get('customer_login');
-												if ($login_check) {
-													echo '<input type="submit" class="compare" name="compare" value="Compare Product"/>' . '  ';
-												} else {
-													echo '';
-												}
-
-												?>
-
-
+											
 											</form>
 										</div>
 									</div>
@@ -194,17 +166,17 @@ if (isset($insertWishlist)) {
 							<?php 
 								}
 							}else{
-								echo 'Category Not Avaiable';
+								echo 'Không có sản phẩm thuộc thương hiệu';
 							}
 							?>
 					</div>
 					<div class="pagination">
-						<ul class="nav-links">
+						<!-- <ul class="nav-links">
 							<li class="active"><a href="#">1</a></li>
 							<li><a href="#">2</a></li>
 							<li><a href="#">3</a></li>
 							<li class="back-next"><a href="#">Next</a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 			</div>

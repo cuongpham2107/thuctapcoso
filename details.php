@@ -85,8 +85,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 								<div class="product-info-price">
 									<span class="price text-4xl">
 
-										Giá: <span class="text-red-500 font-semibold"><?php echo $fm->format_currency($result_details['price']) . " " . "VNĐ" ?></span>
+										Giá: <?php if (!empty($result_details['sale_price'])) { ?>
+											<span>
+													<ins class="!contents"><?php echo $fm->format_currency($result_details['sale_price']) . " " . "VNĐ" ?></ins>
 
+													<del><?php echo $fm->format_currency($result_details['price']) . " " . "VNĐ" ?></del>
+												<?php } else { ?>
+													<ins><?php echo $fm->format_currency($result_details['price']) . " " . "VNĐ" ?></ins>
+												<?php } ?>
+											</span>		
 									</span>
 
 									<div class="quantity ">

@@ -285,12 +285,18 @@
 		}
 		//END BACKEND 
 		public function getproduct_feathered(){
-			$query = "SELECT * FROM tbl_product where type = '0' order by productId desc LIMIT 4 ";
+			$query = "SELECT * FROM tbl_product where type = '1' order by productId desc LIMIT 4 ";
 			$result = $this->db->select($query);
 			return $result;
 		} 
 		public function getproduct_list(){
-			$query = "SELECT * FROM tbl_product order by productId desc ";
+			$query = "SELECT * FROM tbl_product order by productId desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function getproduct_pagination($limit,$this_page_first_result)
+		{	
+			$query = "SELECT * FROM tbl_product order by productId desc LIMIT ".$this_page_first_result.','.$limit;
 			$result = $this->db->select($query);
 			return $result;
 		} 
@@ -390,7 +396,7 @@
 			$result_check_wlist = $this->db->select($check_wlist);
 
 			if($result_check_wlist){
-				$msg = "<span class='error'>Sản phẩm đã được thêm vào danh sách yêu thích</span>";
+				$msg = "Sản phẩm đã được thêm vào danh sách yêu thích";
 				return $msg;
 			}else{
 

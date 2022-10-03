@@ -27,7 +27,7 @@
 			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
 			$result_check_cart = $this->db->select($check_cart);
 			if($result_check_cart){
-				$msg = "<span class='error'>Sản phẩm đã được thêm vào giỏ</span>";
+				$msg = "Sản phẩm đã được thêm vào giỏ";
 				return $msg;
 			}else{
 
@@ -35,15 +35,18 @@
 			$result = $this->db->select($query)->fetch_assoc();
 			
 			$image = $result["image"];
-			$price = $result["price"];
+			$sale_price = $result["sale_price"];
 			$productName = $result["productName"];
-
-			
-			
-			$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+			$price = $result["price"];
+			if (!empty($sale_price)) {
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$sale_price','$productName')";
+			}else{
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+			}
 			$insert_cart = $this->db->insert($query_insert);
 				if($insert_cart){
-					echo "<script>window.location ='cart.php'</script>";
+					$msg = "Sản phẩm đã được thêm vào giỏ";
+					return $msg;
 				}else{
 					echo "<script>window.location ='404.php'</script>";
 				}
@@ -143,7 +146,7 @@
 			return $get_cart_ordered;
 		}
 		public function get_inbox_cart(){
-			$query = "SELECT * FROM tbl_order ORDER BY date_order";
+			$query = "SELECT * FROM tbl_order ORDER BY date_order desc";
 			$get_inbox_cart = $this->db->select($query);
 			return $get_inbox_cart;
 		}

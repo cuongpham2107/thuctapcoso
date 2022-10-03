@@ -52,7 +52,7 @@ include 'includes/slider.php';
 			foreach($catefory as $result){
 		?>
 			<div class="block-top-categori-item">
-				<a href="#"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="c1"></a>
+				<a href="productbycat.php?catid=<?php echo $result['catId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="c1"></a>
 				<div class="block-top-categori-title"><?php echo $result['catName'] ?></div>
 			</div>
 		<?php 
@@ -105,6 +105,8 @@ include 'includes/slider.php';
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
 							$product_feathered = $product->getproduct_feathered();
+							if($product_feathered){
+							
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -122,7 +124,13 @@ include 'includes/slider.php';
 												<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
 											</div>
 											<span class="price">
-												<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+												<?php if (!empty($result['sale_price'])) { ?>
+													<ins><?php echo $fm->format_currency($result['sale_price']) . " " . "VNĐ" ?></ins>
+
+													<del><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></del>
+												<?php } else { ?>
+													<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+												<?php } ?>
 											</span>
 											
 										</div>
@@ -131,6 +139,8 @@ include 'includes/slider.php';
 									
 							<?php
 								}
+									
+							}
 							?>
 							
 							
@@ -141,6 +151,7 @@ include 'includes/slider.php';
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
 							$product_feathered = $product->getLastestDell();
+							if($product_feathered){
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -167,6 +178,7 @@ include 'includes/slider.php';
 									
 							<?php
 								}
+							}
 							?>
 						</div>
 					</div>
@@ -174,6 +186,7 @@ include 'includes/slider.php';
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
 							$product_feathered = $product->getLastestOppo();
+							if($product_feathered){
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -200,6 +213,7 @@ include 'includes/slider.php';
 									
 							<?php
 								}
+							}
 							?>
 						</div>
 					</div>
@@ -207,6 +221,7 @@ include 'includes/slider.php';
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
 							$product_feathered = $product->getLastestSamsung();
+							if($product_feathered){
 							foreach($product_feathered as $result){
 							?>
 								<div class="product-item style1">
@@ -233,6 +248,7 @@ include 'includes/slider.php';
 									
 							<?php
 								}
+							}
 							?>
 						</div>
 					</div>
