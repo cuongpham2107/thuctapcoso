@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 25, 2022 lúc 03:52 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Oct 04, 2022 at 06:11 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thuctapcoso`
+-- Database: `thuctapcoso`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_admin`
+-- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_admin`
+-- Dumping data for table `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adminPass`, `level`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adm
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_brand`
+-- Table structure for table `tbl_brand`
 --
 
 CREATE TABLE `tbl_brand` (
@@ -56,7 +56,7 @@ CREATE TABLE `tbl_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_brand`
+-- Dumping data for table `tbl_brand`
 --
 
 INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
@@ -72,7 +72,7 @@ INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_cart`
+-- Table structure for table `tbl_cart`
 --
 
 CREATE TABLE `tbl_cart` (
@@ -86,7 +86,7 @@ CREATE TABLE `tbl_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_cart`
+-- Dumping data for table `tbl_cart`
 --
 
 INSERT INTO `tbl_cart` (`cartId`, `productId`, `sId`, `productName`, `price`, `quantity`, `image`) VALUES
@@ -102,12 +102,13 @@ INSERT INTO `tbl_cart` (`cartId`, `productId`, `sId`, `productName`, `price`, `q
 (19, 19, 'hlkksgphiqn70b37sjg3u89unu', 'Äá»“ng Há»“ ThÃ´ng Minh Apple Watch Series 4 GPS Aluminum Case With Sport Loop', '9700000', 1, '6d72eb58ae.jpg'),
 (24, 21, '43auoeb0mu8g70th2qj79ggugt', 'Apple New For Mysql Server', '50000', 3, 'ad351ef94f.png'),
 (27, 22, 'copfmb8356885rmntm071kt1ed', 'Apple New For Mysql Server', '60000', 3, '3cf061e944.jpg'),
-(28, 21, 'copfmb8356885rmntm071kt1ed', 'Màn hình Apple Pro Dislay XDR Nano Texture Glass SOA (MWPF2SA/A) (31.5inch/6K/Retina/60Hz/1000nits/Thunderbolt-USBC)', '149999000', 1, 'dc21a2c230.jpg');
+(28, 21, 'copfmb8356885rmntm071kt1ed', 'Màn hình Apple Pro Dislay XDR Nano Texture Glass SOA (MWPF2SA/A) (31.5inch/6K/Retina/60Hz/1000nits/Thunderbolt-USBC)', '149999000', 1, 'dc21a2c230.jpg'),
+(34, 20, 'copfmb8356885rmntm071kt1ed', 'Router Wifi 4G Huawei 300Mbps B593S-12', '1240000', 1, 'bad0b4b600.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_category`
+-- Table structure for table `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -117,7 +118,7 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_category`
+-- Dumping data for table `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`catId`, `catName`, `image`) VALUES
@@ -133,7 +134,7 @@ INSERT INTO `tbl_category` (`catId`, `catName`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_compare`
+-- Table structure for table `tbl_compare`
 --
 
 CREATE TABLE `tbl_compare` (
@@ -148,7 +149,7 @@ CREATE TABLE `tbl_compare` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_customer`
+-- Table structure for table `tbl_customer`
 --
 
 CREATE TABLE `tbl_customer` (
@@ -164,7 +165,7 @@ CREATE TABLE `tbl_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_customer`
+-- Dumping data for table `tbl_customer`
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `address`, `city`, `country`, `zipcode`, `phone`, `email`, `password`) VALUES
@@ -176,7 +177,7 @@ INSERT INTO `tbl_customer` (`id`, `name`, `address`, `city`, `country`, `zipcode
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_news`
+-- Table structure for table `tbl_news`
 --
 
 CREATE TABLE `tbl_news` (
@@ -190,7 +191,7 @@ CREATE TABLE `tbl_news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_news`
+-- Dumping data for table `tbl_news`
 --
 
 INSERT INTO `tbl_news` (`newId`, `title`, `description`, `body`, `type`, `status`, `image`) VALUES
@@ -202,7 +203,7 @@ INSERT INTO `tbl_news` (`newId`, `title`, `description`, `body`, `type`, `status
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_order`
+-- Table structure for table `tbl_order`
 --
 
 CREATE TABLE `tbl_order` (
@@ -218,7 +219,7 @@ CREATE TABLE `tbl_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_order`
+-- Dumping data for table `tbl_order`
 --
 
 INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quantity`, `price`, `image`, `status`, `date_order`) VALUES
@@ -235,7 +236,7 @@ INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quant
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_product`
+-- Table structure for table `tbl_product`
 --
 
 CREATE TABLE `tbl_product` (
@@ -256,7 +257,7 @@ CREATE TABLE `tbl_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_product`
+-- Dumping data for table `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQuantity`, `product_soldout`, `product_remain`, `catId`, `brandId`, `product_desc`, `product_body`, `type`, `price`, `sale_price`, `image`) VALUES
@@ -277,7 +278,7 @@ INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQ
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_settings`
+-- Table structure for table `tbl_settings`
 --
 
 CREATE TABLE `tbl_settings` (
@@ -296,16 +297,16 @@ CREATE TABLE `tbl_settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_settings`
+-- Dumping data for table `tbl_settings`
 --
 
 INSERT INTO `tbl_settings` (`id`, `title`, `description`, `body`, `phone`, `email`, `address`, `link_facebook`, `link_youtobe`, `link_twitter`, `link_instagram`, `logo`) VALUES
-(1, 'rdfase', '', '', '', '', '', '', '', '', '', '');
+(1, 'Cửa hàng điện thoại', 'Cửa hàng điện thoại', 'Cửa hàng điện thoại', '0123456789', 'abc@gmail.com', 'Thái nguyên', 'https://www.facebook.com/', 'https://www.youtube.com/', 'https://www.twitter.com/', 'https://www.instagram.com/', '4d6dc0f525.png');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_slider`
+-- Table structure for table `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -316,7 +317,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_slider`
+-- Dumping data for table `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALUES
@@ -327,7 +328,7 @@ INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_warehouse`
+-- Table structure for table `tbl_warehouse`
 --
 
 CREATE TABLE `tbl_warehouse` (
@@ -338,7 +339,7 @@ CREATE TABLE `tbl_warehouse` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_warehouse`
+-- Dumping data for table `tbl_warehouse`
 --
 
 INSERT INTO `tbl_warehouse` (`id_warehouse`, `id_sanpham`, `sl_nhap`, `sl_ngaynhap`) VALUES
@@ -350,7 +351,7 @@ INSERT INTO `tbl_warehouse` (`id_warehouse`, `id_sanpham`, `sl_nhap`, `sl_ngaynh
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_wishlist`
+-- Table structure for table `tbl_wishlist`
 --
 
 CREATE TABLE `tbl_wishlist` (
@@ -363,176 +364,177 @@ CREATE TABLE `tbl_wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_wishlist`
+-- Dumping data for table `tbl_wishlist`
 --
 
 INSERT INTO `tbl_wishlist` (`id`, `customer_id`, `productId`, `productName`, `price`, `image`) VALUES
 (3, 3, 6, 'MÃ¡y tÃ­nh Dell A503', '10000000', 'dbb417a309.jpg'),
-(4, 3, 18, 'Laptop Dell G7 7588 N7588A Core i7-8750H/Win10 (15.6 inch)', '2589900', '32942e9470.jpg');
+(4, 3, 18, 'Laptop Dell G7 7588 N7588A Core i7-8750H/Win10 (15.6 inch)', '2589900', '32942e9470.jpg'),
+(5, 7, 20, 'Router Wifi 4G Huawei 300Mbps B593S-12', '1240000', 'bad0b4b600.jpg');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `tbl_admin`
+-- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
--- Chỉ mục cho bảng `tbl_brand`
+-- Indexes for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   ADD PRIMARY KEY (`brandId`);
 
 --
--- Chỉ mục cho bảng `tbl_cart`
+-- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`cartId`);
 
 --
--- Chỉ mục cho bảng `tbl_category`
+-- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`catId`);
 
 --
--- Chỉ mục cho bảng `tbl_compare`
+-- Indexes for table `tbl_compare`
 --
 ALTER TABLE `tbl_compare`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_customer`
+-- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_news`
+-- Indexes for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
   ADD PRIMARY KEY (`newId`);
 
 --
--- Chỉ mục cho bảng `tbl_order`
+-- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_product`
+-- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`productId`);
 
 --
--- Chỉ mục cho bảng `tbl_settings`
+-- Indexes for table `tbl_settings`
 --
 ALTER TABLE `tbl_settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_slider`
+-- Indexes for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`sliderId`);
 
 --
--- Chỉ mục cho bảng `tbl_warehouse`
+-- Indexes for table `tbl_warehouse`
 --
 ALTER TABLE `tbl_warehouse`
   ADD PRIMARY KEY (`id_warehouse`);
 
 --
--- Chỉ mục cho bảng `tbl_wishlist`
+-- Indexes for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_admin`
+-- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_brand`
+-- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_cart`
+-- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_category`
+-- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_compare`
+-- AUTO_INCREMENT for table `tbl_compare`
 --
 ALTER TABLE `tbl_compare`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_customer`
+-- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_news`
+-- AUTO_INCREMENT for table `tbl_news`
 --
 ALTER TABLE `tbl_news`
   MODIFY `newId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_order`
+-- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_product`
+-- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_settings`
+-- AUTO_INCREMENT for table `tbl_settings`
 --
 ALTER TABLE `tbl_settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_slider`
+-- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `sliderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_warehouse`
+-- AUTO_INCREMENT for table `tbl_warehouse`
 --
 ALTER TABLE `tbl_warehouse`
   MODIFY `id_warehouse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_wishlist`
+-- AUTO_INCREMENT for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
