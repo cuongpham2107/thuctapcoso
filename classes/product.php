@@ -413,10 +413,10 @@
 			$insert_wlist = $this->db->insert($query_insert);
 
 			if($insert_wlist){
-						$alert = "<span class='success'>Đã thêm vào danh sách yêu thích thành công </span>";
+						$alert = "Đã thêm vào danh sách yêu thích thành công ";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Đã thêm vào danh sách yêu thích không thành công</span>";
+						$alert = "Đã thêm vào danh sách yêu thích không thành công";
 						return $alert;
 					}
 			}

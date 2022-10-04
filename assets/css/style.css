@@ -8,8 +8,8 @@ Background: #ffffff
 Body Color : #ffffff
 Monitors color: #222222
 [Typography]
-Body:       14px/30px Roboto sans-serif;
-Input, textarea: 14px/30px Roboto, sans-serif;
+Body:       14px/30px arial sans-serif;
+Input, textarea: 14px/30px arial, sans-serif;
 
 [Component module]
 HEADER
@@ -21,8 +21,8 @@ FOOTER
 HOME SLIDE
 REPONSIVE
 /*-------------------------*/
-@font-face {
-	font-family: 'Roboto';
+/* @font-face {
+	font-family: 'arial';
 	src: url('../fonts/sofia_pro_regular.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
@@ -34,13 +34,13 @@ REPONSIVE
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	src: url('../fonts/sofia_pro_medium.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	src: url('../fonts/sofia_pro_semibold.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
@@ -50,11 +50,11 @@ REPONSIVE
 	src: url('../fonts/sofia_pro_bold.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
-}
+} */
 @import url(../js/fancybox/source/jquery.fancybox.css);
 @import url(../js/fancybox/source/helpers/jquery.fancybox-thumbs.css);
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'arial', sans-serif;
 	font-size: 14px;
 	line-height: 26px;
 	color: #666;
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.3em;
 	margin-top: 0;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 h1 {
 	font-size: 36px;
@@ -165,14 +165,14 @@ button, .button, input[type="submit"] {
 	position: relative;
 	background-color: #e03737;
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	border: none;
 	border-radius: 3px;
 	letter-spacing: 0.1em;
 }
 .btn {
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	letter-spacing: 0.1em;
 }
 button:hover, .button:hover, input[type="submit"]:hover {
@@ -410,7 +410,7 @@ input[type=password] {
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 4px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	letter-spacing: 0.05em;
 }
 .dagon-iconbox.style-02 {
@@ -803,7 +803,7 @@ input[type=password] {
 	margin-left: 10px;
 }
 .minicart-content-wrapper .subtitle {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	text-transform: uppercase;
 	font-size: 13px;
@@ -868,7 +868,7 @@ input[type=password] {
 }
 .minicart-content-wrapper .subtotal .price {
 	font-size: 18px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 }
 .btn-viewcart,
@@ -876,7 +876,7 @@ input[type=password] {
 	font-size: 13px;
 	text-transform: uppercase;
 	color: #fff;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	background-color: #222;
 	padding: 9px 25px;
 }
@@ -976,7 +976,7 @@ input[type=password] {
 	float: left;
 }
 .search-hidden .pe-7s-search {
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .block-minicart .minicart {
 	margin-left: 25px;
@@ -1015,7 +1015,7 @@ input[type=password] {
 .block-minicart .counter-price {
 	font-size: 16px;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-right: 10px;
 }
 .chosen-container {
@@ -1067,7 +1067,7 @@ input[type=password] {
 .chosen-container .chosen-results li.active-result.highlighted:first-child {
 	background-color: #f0f2f5;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding-left: 15px;
 }
 .chosen-container .chosen-results {
@@ -1183,7 +1183,7 @@ input[type=password] {
 }
 .header-nav > li a,
 .header-nav .menu-item-has-children a {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	font-size: 14px;
 }
@@ -1232,7 +1232,7 @@ input[type=password] {
 .dropdown-menu-title {
 	color: #222;
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	position: relative;
 	padding-bottom: 10px;
@@ -1266,7 +1266,7 @@ input[type=password] {
 .submenu .menu-item a,
 .submenu > .menu-item a {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #666;
 	font-weight: normal;
 	text-transform: none;
@@ -1279,14 +1279,14 @@ input[type=password] {
 }
 .header-nav .dropdown-menu-info .shop-now {
 	padding: 0px 18px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-top: 97px;
 	margin-left: 19px;
 }
 .info-big {
 	color: #f02222;
 	font-size: 40px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 }
 .info-big span {
@@ -1303,7 +1303,7 @@ input[type=password] {
 	text-align: right;
 	width: 82px;
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	text-transform: uppercase;
 }
@@ -1327,7 +1327,7 @@ input[type=password] {
 	color: #fff;
 	text-transform: uppercase;
 	text-align: center;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	font-size: 14px;
 	cursor: pointer;
 }
@@ -1347,7 +1347,7 @@ input[type=password] {
 @media (max-width: 991px) {
 	.header-nav > li a,
 	.header-nav .menu-item-has-children a {
-		font-family: 'Roboto';
+		font-family: 'arial';
 		font-size: 14px;
 		text-transform: capitalize;
 	}
@@ -1521,7 +1521,7 @@ input[type=password] {
 	text-transform: uppercase;
 	background-color: #e03737;
 	padding: 21px 20px 20px 23px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-bottom: 0;
 	float: left;
 	height: 61px;
@@ -1801,7 +1801,7 @@ input[type=password] {
 	font-size: 36px;
 	color: #222;
 	line-height: 1.2 !important;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin: 0 0 10px;
 }
 .main-slide.slide-opt-1 .p-primary {
@@ -1815,7 +1815,7 @@ input[type=password] {
 .main-slide .btn-shop-now {
 	border-radius: 3px;
 	font-size: 12px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #fff;
 	text-transform: uppercase;
 	background-color: #e03737;
@@ -1925,11 +1925,11 @@ input[type=password] {
 	font-size: 68px;
 	display: none;
 	color: #fff;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-left: 4px;
 }
 .main-slide.slide-opt-3 .slide-desc-2 .number span {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	font-size: 38px;
 }
 .main-slide.slide-opt-3 .slide-desc-2 .p-second {
@@ -1937,7 +1937,7 @@ input[type=password] {
 	font-size: 20px;
 	color: #e03737;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-top: 20px;
 }
 .main-slide.slide-opt-3 .slide-desc-2 p {
@@ -1969,16 +1969,16 @@ input[type=password] {
 }
 .main-slide.slide-opt-4 .slide-desc-1 .p-primary {
 	color: #666;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .main-slide.slide-opt-4 .slide-desc-1 .p-primary span {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 }
 .main-slide.slide-opt-4 .slide-desc-1 .color-red {
 	color: #e03737;
 	font-size: 18px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .main-slide.slide-opt-4 .btn-shop-now {
 	margin-top: 17px;
@@ -1990,7 +1990,7 @@ input[type=password] {
 .main-slide.slide-opt-4 .slide-desc-2 .p-second {
 	font-style: italic;
 	font-size: 20px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 }
 .main-slide.slide-opt-4 .slide-desc-3 {
@@ -2217,7 +2217,7 @@ input[type=password] {
 }
 .title-of-section {
 	font-size: 24px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: capitalize;
 	margin-bottom: 45px;
 	color: #222;
@@ -2276,7 +2276,7 @@ input[type=password] {
 .product-name {
 	margin-bottom: 6px;
 	line-height: 20px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .product-name a {
 	font-size: 16px;
@@ -2293,7 +2293,7 @@ input[type=password] {
 .price ins {
 	font-size: 18px;
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-decoration: none;
 	margin-right: 5px;
 }
@@ -2345,7 +2345,7 @@ input[type=password] {
 	background-color: #e03737;
 	color: #fff;
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 1px 10px;
 	border-radius: 3px;
 	position: relative;
@@ -2376,7 +2376,7 @@ input[type=password] {
 .product-count-down .number {
 	color: #fff;
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	display: inline-block;
 	background-color: #e03737;
 	border-radius: 50%;
@@ -2395,7 +2395,7 @@ input[type=password] {
 .btn-add-to-cart {
 	border-radius: 3px;
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #fff;
 	text-transform: uppercase;
 	border: 2px solid #222;
@@ -2459,14 +2459,14 @@ input[type=password] {
 .block-daily-deals.style3 .title-count-down {
 	font-size: 16px;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	vertical-align: top;
 }
 .block-daily-deals.style3 .title-count-down span {
 	display: block;
 	font-size: 16px;
 	color: #555;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	line-height: 20px;
 }
 .block-daily-deals.style3 .kt-countdown {
@@ -2496,7 +2496,7 @@ input[type=password] {
 .promotion-banner strong {
 	color: #e03737;
 	font-weight: normal;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .promotion-banner h4 {
 	font-size: 22px;
@@ -2509,7 +2509,7 @@ input[type=password] {
 	background-color: #e03737;
 	text-align: center;
 	font-size: 12px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #fff;
 	padding: 0 17px;
 	text-transform: uppercase;
@@ -2542,7 +2542,7 @@ input[type=password] {
 	color: #222;
 	margin-bottom: 20px;
 	font-size: 24px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .promotion-banner.style-3 .promotion-banner-inner {
 	right: 30px;
@@ -2609,7 +2609,7 @@ input[type=password] {
 }
 .page-product .promotion-banner.style-3 h3 {
 	font-size: 30px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .block-banner-sidebar .promotion-banner-inner {
 	position: absolute;
@@ -2640,7 +2640,7 @@ input[type=password] {
 	font-size: 14px;
 	font-weight: normal;
 	color: inherit;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'arial', sans-serif;
 }
 .block-banner-sidebar .banner-link {
 	display: inline-block;
@@ -2650,7 +2650,7 @@ input[type=password] {
 	background-color: #e03737;
 	text-align: center;
 	font-size: 12px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #fff;
 	letter-spacing: 0.1em;
 	padding: 0 15px;
@@ -2678,7 +2678,7 @@ input[type=password] {
 .block-section-6 .promotion-banner.box-single.style-2 h4 {
 	max-width: 100%;
 	font-size: 28px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 }
 .promotion-banner.style-1 .banner-img::before,
@@ -2710,7 +2710,7 @@ input[type=password] {
 	text-transform: uppercase;
 	font-size: 14px;
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-decoration: underline;
 	z-index: 22;
 }
@@ -2772,7 +2772,7 @@ input[type=password] {
 .promotion-banner .btn-shop-now {
 	font-size: 14px;
 	color: #666;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	position: absolute;
 	left: 15px;
@@ -2948,7 +2948,7 @@ input[type=password] {
 .tab-product .nav-tab li {
 	display: inline-block;
 	text-transform: capitalize;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	list-style: none;
 	text-align: center;
 	margin-left: 25px;
@@ -3121,7 +3121,7 @@ input[type=password] {
 	font-size: 13px;
 	text-transform: uppercase;
 	color: #fff;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 5px 11px;
 	background-color: #222;
 	border: 1px solid #222;
@@ -3240,7 +3240,7 @@ input[type=password] {
 .newsletter-title .h3-newsletter {
 	color: #222;
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-bottom: 3px;
 	text-transform: uppercase;
 }
@@ -3278,7 +3278,7 @@ input[type=password] {
 	height: 45px;
 	text-transform: uppercase;
 	color: #fff;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	background-color: #e03737;
 }
 .newsletter-form .btn.subscribe:before {
@@ -3331,7 +3331,7 @@ input[type=password] {
 }
 .contacts .contacts-title {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	margin-bottom: 5px;
 }
@@ -3363,7 +3363,7 @@ input[type=password] {
 	display: inline-block;
 }
 .footer-bottom .links .links-primary {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	font-size: 14px;
 }
@@ -3374,7 +3374,7 @@ input[type=password] {
 	padding: 0 4px 0 2px;
 }
 .footer-bottom .quick-link {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	font-size: 14px;
 	text-transform: uppercase;
 	margin-bottom: 16px;
@@ -3396,7 +3396,7 @@ input[type=password] {
 .copyright-right span {
 	font-size: 14px;
 	color: #fff;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .pay-men {
 	float: right;
@@ -3774,7 +3774,7 @@ input[type=password] {
 }
 .breadcrumb-page li a {
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	position: relative;
 }
@@ -3818,7 +3818,7 @@ input[type=password] {
 }
 .product-info-main .product-name a {
 	font-size: 20px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .product-info-main .star-rating {
 	font-size: 14px;
@@ -3840,7 +3840,7 @@ input[type=password] {
 }
 .stock.available {
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding-bottom: 13px;
 }
 .label-stock {
@@ -3852,7 +3852,7 @@ input[type=password] {
 	text-align: center;
 	color: #555;
 	padding: 9px 0;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-top: 15px;
 	position: relative;
 	border-radius: 3px;
@@ -3894,7 +3894,7 @@ input[type=password] {
 	font-size: 14px;
 	color: #222;
 	margin-bottom: 8px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .buttons-added {
 	border: 1px solid #e6e6e6;
@@ -3910,7 +3910,7 @@ input[type=password] {
 	line-height: 22px;
 	text-align: center;
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-left: 4px;
 }
 .buttons-added .sign {
@@ -3952,7 +3952,7 @@ input[type=password] {
 }
 .product-info-price .single-add-to-cart .compare,
 .product-info-price .single-add-to-cart .wishlist {
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .single-add-to-cart .compare:hover,
 .single-add-to-cart .wishlist:hover {
@@ -3978,7 +3978,7 @@ input[type=password] {
 .tab-details-product li > a {
 	font-size: 14px;
 	color: #666;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	background-color: #eee;
 	padding: 10px 18px;
@@ -4006,7 +4006,7 @@ input[type=password] {
 	color: #e03737;
 }
 .box-content label {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 }
 /*****responsive-detal-product*******/
@@ -4102,7 +4102,7 @@ input[type=password] {
 	color: #fff;
 	border-left: none;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .footer-opt-2 .footer-top {
 	margin-top: 85px;
@@ -4117,7 +4117,7 @@ input[type=password] {
 	display: inline-block;
 	color: #fff;
 	font-size: 26px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .footer-opt-2 .newsletter-title .h3-newsletter::before {
 	content: "\f1d8";
@@ -4211,7 +4211,7 @@ input[type=password] {
 	color: #888;
 	margin-top: 12px;
 	display: inline-block;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	position: relative;
 }
 .view-more:hover {
@@ -4239,7 +4239,7 @@ input[type=password] {
 }
 .footer-opt-2 .copyright-right span {
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 /********redponsive-footer-opt-2********/
 
@@ -4301,7 +4301,7 @@ input[type=password] {
 	font-size: 16px;
 	text-transform: uppercase;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	position: relative;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
@@ -4344,7 +4344,7 @@ input[type=password] {
 }
 .login label,
 .register label {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 }
 .login .inline,
@@ -4435,7 +4435,7 @@ input[type=password] {
 .form-contact label {
 	font-size: 14px;
 	color: #555;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-bottom: 8px;
 }
 .form-row.form-row-wide .textarea-control {
@@ -4470,7 +4470,7 @@ input[type=password] {
 	color: #222;
 	margin: 0;
 	padding-top: 10px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding-left: 74px;
 }
 .contacts-info:last-child .title-info {
@@ -4507,7 +4507,7 @@ input[type=password] {
 	font-size: 16px;
 	color: #222;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	display: inline-block;
 	padding-bottom: 25px;
 }
@@ -4527,7 +4527,7 @@ input[type=password] {
 	font-size: 16px;
 	color: #222;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-bottom: 22px;
 }
 .about-text-content {
@@ -4539,7 +4539,7 @@ input[type=password] {
 .about-text-title {
 	font-size: 14px;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	position: relative;
 	margin-bottom: 3px;
@@ -4640,7 +4640,7 @@ button.btn-searchform {
 .block-title {
 	font-size: 16px;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	padding-bottom: 10px;
 }
@@ -4744,7 +4744,7 @@ button.btn-searchform {
 	display: inline-block;
 	font-size: 14px;
 	width: 60px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	height: 60px;
 	line-height: 20px;
 	text-align: center;
@@ -4763,7 +4763,7 @@ button.btn-searchform {
 	margin-bottom: 10px;
 }
 .post-name a {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	font-size: 20px;
 	padding-top: 18px;
 	display: inline-block;
@@ -4781,7 +4781,7 @@ button.btn-searchform {
 }
 .post-metas .author span {
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .post-metas .time,
 .post-metas .leave-coment,
@@ -4803,7 +4803,7 @@ button.btn-searchform {
 	margin-bottom: 0;
 }
 .post-content .post-item-firts {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-bottom: 27px;
 }
 .post-item-last {
@@ -4816,7 +4816,7 @@ button.btn-searchform {
 }
 .post-item-last-title {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 }
 .post-item-last-content-second {
@@ -4829,7 +4829,7 @@ button.btn-searchform {
 .post-footer .tag span {
 	text-transform: uppercase;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .post-footer .tag {
 	padding-bottom: 30px;
@@ -4857,7 +4857,7 @@ button.btn-searchform {
 }
 .post-authur .des strong {
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	display: inline-block;
 	padding-bottom: 15px;
@@ -4873,7 +4873,7 @@ button.btn-searchform {
 	margin-bottom: 20px;
 }
 .form-group .title {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	margin-bottom: 8px;
 }
@@ -4900,7 +4900,7 @@ button.btn-searchform {
 }
 .btn-comment {
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #fff;
 	text-transform: uppercase;
 	border-radius: 3px;
@@ -4990,7 +4990,7 @@ button.btn-searchform {
 .post-content .read-more {
 	text-transform: uppercase;
 	font-size: 13px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 9px 35px;
 	color: #fff;
 	background-color: #e03737;
@@ -5072,7 +5072,7 @@ button.btn-searchform {
 	padding-bottom: 28px;
 }
 .checkout .title-checkout {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	font-size: 16px;
 	color: #222;
 	text-transform: uppercase;
@@ -5089,7 +5089,7 @@ button.btn-searchform {
 .checkout .form-group .inline {
 	color: #555;
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .checkout .form-group.shipping,
 .checkout .form-group.payment {
@@ -5125,7 +5125,7 @@ button.btn-searchform {
 }
 .checkout .form-group.shipping .discount {
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	border-bottom: 1px solid #e6e6e6;
 	padding: 33px 0 6px 0;
@@ -5140,7 +5140,7 @@ button.btn-searchform {
 }
 .checkout .form-group.shipping button,
 .checkout .form-group.payment button {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 7px 35px;
 	margin-top: 15px;
 	display: block;
@@ -5150,7 +5150,7 @@ button.btn-searchform {
 }
 .checkout .form-group.payment .inline {
 	display: block;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	font-size: 14px;
 }
@@ -5163,7 +5163,7 @@ button.btn-searchform {
 }
 .checkout .grand-total {
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	margin: 13px 0 6px 0;
 	display: inline-block;
@@ -5267,13 +5267,13 @@ label.inline {
 .shopping-cart .form-cart .table td.tb-total {
 	width: 130px;
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	padding: 53px 5px;
 }
 .shopping-cart .form-cart .table td.tb-price {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	padding: 53px 5px;
 	width: 130px;
@@ -5297,7 +5297,7 @@ label.inline {
 .shopping-cart .form-cart button {
 	color: #fff;
 	background-color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 9px 20px;
 }
 .shopping-cart .form-cart button:hover {
@@ -5317,13 +5317,13 @@ label.inline {
 	color: #222;
 	font-size: 16px;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	border-bottom: 1px solid #e6e6e6;
 	padding-bottom: 15px;
 }
 .shopping-cart .order-left {
 	display: block;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .shopping-cart .checkout-element-content {
 	padding-top: 14px;
@@ -5412,7 +5412,7 @@ label.inline {
 }
 .filter-options .filter-options-title {
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	border-bottom: 1px solid #e6e6e6;
 	padding-bottom: 8px;
@@ -5471,7 +5471,7 @@ label.inline {
 	right: 0;
 	top: 25px;
 	color: #222;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .filter-options .filter-size .filter-options-content li {
 	display: inline-block;
@@ -5481,7 +5481,7 @@ label.inline {
 	text-align: center;
 	font-size: 14px;
 	color: #555;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .filter-options .filter-size .inline .input {
 	width: 42px;
@@ -5561,7 +5561,7 @@ label.inline {
 	font-size: 18px;
 	color: #222;
 	text-transform: uppercase;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	padding: 35px 0 10px 0;
 }
 .product-list .promotion-banner {
@@ -5592,7 +5592,7 @@ label.inline {
 	font-size: 13px;
 	color: #222;
 	margin-left: 20px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .modes .modes-mode i {
 	margin-right: 7px;
@@ -5710,7 +5710,7 @@ label.inline {
 .product-list .show-resuilt {
 	color: #222;
 	float: right;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-top: 5px;
 }
 .product-list .block-section-7 {
@@ -6131,7 +6131,7 @@ label.inline {
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #e03737;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	margin-top: 20px;
 	position: relative;
 }
@@ -6265,7 +6265,7 @@ label.inline {
 }
 .product-item.style2 .price ins {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 }
 .product-item.style2 .price del {
 	text-decoration: line-through;
@@ -6325,7 +6325,7 @@ label.inline {
 	margin: -2px 0 2px 0;
 }
 .title-template.transport {
-	font-family: 'Roboto';
+	font-family: 'arial';
 	line-height: 40px;
 	width: initial;
 }
@@ -6393,7 +6393,7 @@ label.inline {
 .block-up-to .up-to-content {
 	color: #fff;
 	font-size: 19px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	display: inline-block;
 	line-height: 45px;
@@ -6405,7 +6405,7 @@ label.inline {
 }
 .block-up-to .shop-all {
 	font-size: 14px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-decoration: underline;
 	color: #fff;
 }
@@ -6428,7 +6428,7 @@ label.inline {
 .site-main-main .promotion-banner.style-2 .shop-now {
 	left: 20px;
 	bottom: 45px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-decoration: none;
 	background: #e03737;
 	color: #fff;
@@ -6756,7 +6756,7 @@ label.inline {
 }
 .block-newletter-popup .text-popup-primary {
 	font-size: 45px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	text-transform: uppercase;
 	color: #e03737;
 	line-height: 41px;
@@ -6774,7 +6774,7 @@ label.inline {
 }
 .block-newletter-popup .text-your-email {
 	font-size: 16px;
-	font-family: 'Roboto';
+	font-family: 'arial';
 	color: #222;
 	text-transform: uppercase;
 	max-width: 248px;
