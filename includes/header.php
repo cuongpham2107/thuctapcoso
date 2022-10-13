@@ -209,7 +209,7 @@ header("Cache-Control: max-age=2592000");
 						<div class="col-md-2 nav-left">
 							<!-- logo -->
 							<strong class="logo">
-								<a href="../index.php"><img style="width: 70px;" src="admin/uploads/<?php echo $result['logo'] ?>" alt="logo"></a>
+								<a href="index.php"><img style="width: 70px;" src="admin/uploads/<?php echo $result['logo'] ?>" alt="logo"></a>
 							</strong>
 							<!-- logo -->
 						</div>

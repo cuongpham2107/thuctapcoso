@@ -74,7 +74,7 @@
                         <label>Trạng thái</label>
                     </td>
                     <td>
-                        <select id="select" name="type">
+                        <select id="select" name="status">
                             <option>Select Type</option>
                             <?php
                             if($result_new['status']==0){

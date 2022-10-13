@@ -314,27 +314,32 @@
 			return $result;
 		}
 		public function getLastestDell(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '6' order by productId desc LIMIT 1";
+			$query = "SELECT * FROM tbl_product WHERE brandId = '10' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestOppo(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '3' order by productId desc LIMIT 1";
+		public function getLastestAsus(){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '12' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestHuawei(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '4' order by productId desc LIMIT 1";
+		public function getLastestAcer(){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '13' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestSamsung(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '2' order by productId desc LIMIT 1";
+		public function getLastestApple(){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '14' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestApple($brandID){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '$brandID' order by productId desc LIMIT 1";
+		public function getLastestHp(){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '9' order by productId desc LIMIT 1";
+			$result = $this->db->select($query);
+			return $result;
+		}
+		public function getLastestMsi(){
+			$query = "SELECT * FROM tbl_product WHERE brandId = '8' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}

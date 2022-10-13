@@ -142,7 +142,7 @@ if (isset($insertWishlist)) {
 											<p>Size: One Size Fits All </p>
 											<p>Guarantee: 2 Year</p>
 										</div>
-										<div class="single-add-to-cart">
+										<div class="single-add-to-cart flex space-x-4">
 											<form action="" method="post">
 												<input type="hidden" class="border p-4 text-center ml-2" name="quantity" value="1" min="1" />
 												<input type="hidden" name="product_id" value="<?php echo $value['productId'] ?>">
@@ -160,13 +160,12 @@ if (isset($insertWishlist)) {
 												$login_check = Session::get('customer_login');
 												if ($login_check) {
 
-													echo '<input type="submit" class="wishlist" name="wishlist" value="Save to Wishlist">';
+													echo '<button type="submit" name="wishlist" class="wishlist p-2"><i class="fa fa-heart-o" aria-hidden="true"></i></button>';
 												} else {
 													echo '';
 												}
 
 												?>
-
 
 
 											</form>
@@ -178,7 +177,7 @@ if (isset($insertWishlist)) {
 
 												$login_check = Session::get('customer_login');
 												if ($login_check) {
-													echo '<input type="submit" class="compare" name="compare" value="Compare Product"/>' . '  ';
+													echo '<button type="submit"  name="compare" class="compare p-2"><i class="fa fa-exchange"></i></button>';
 												} else {
 													echo '';
 												}

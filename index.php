@@ -95,9 +95,12 @@ include 'includes/slider.php';
 		<div class="tab-product tab-product-fade-effect">
 			<ul class="box-tabs nav-tab">
 				<li class="active"><a data-animated="" data-toggle="tab" href="#tab-1">Tất cả sản phẩm</a></li>
-				<li><a data-animated="" data-toggle="tab" href="#tab-2">PC-Gamming</a></li>
-				<li><a data-animated="" data-toggle="tab" href="#tab-3">Laptop</a></li>
-				<li><a data-animated="" data-toggle="tab" href="#tab-4">Phụ kiện</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-2">Dell</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-3">HP</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-4">Acer</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-5">Asus</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-6">MSI</a></li>
+				<li><a data-animated="" data-toggle="tab" href="#tab-7">Apple</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-container">
@@ -105,100 +108,104 @@ include 'includes/slider.php';
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
 							$product_feathered = $product->getproduct_feathered();
-							foreach($product_feathered as $result){
-							?>
-								<div class="product-item style1">
-									<div class="product-inner equal-elem">
-										<div class="product-thumb">
-											<div class="thumb-inner">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>">
-												<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+							if($product_feathered ){
+								foreach($product_feathered as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
 											</div>
 										</div>
-										<div class="product-innfo">
-
-											<div class="product-name">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
-												<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
-											</div>
-											<span class="price">
-												<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
-											</span>
 											
-										</div>
-									</div>
-								</div>
-									
-							<?php
+									<?php
+									}
 								}
 							?>
-							
-							
-
 						</div>
 					</div>
 					<div id="tab-2" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getLastestDell();
-							foreach($product_feathered as $result){
-							?>
-								<div class="product-item style1">
-									<div class="product-inner equal-elem">
-										<div class="product-thumb">
-											<div class="thumb-inner">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>">
-												<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+							$product_LastestDell = $product->getLastestDell();
+							if($product_LastestDell){
+								foreach($product_LastestDell as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
 											</div>
 										</div>
-										<div class="product-innfo">
-
-											<div class="product-name">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
-												<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
-											</div>
-											<span class="price">
-												<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
-											</span>
 											
-										</div>
-									</div>
-								</div>
-									
-							<?php
+									<?php
 								}
+							}
 							?>
 						</div>
 					</div>
 					<div id="tab-3" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getLastestOppo();
-							foreach($product_feathered as $result){
-							?>
-								<div class="product-item style1">
-									<div class="product-inner equal-elem">
-										<div class="product-thumb">
-											<div class="thumb-inner">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>">
-												<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+							$product_LastestHp = $product->getLastestHp();
+							if($product_LastestHp){
+								foreach($product_LastestHp as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
 											</div>
 										</div>
-										<div class="product-innfo">
-
-											<div class="product-name">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
-												<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
-											</div>
-											<span class="price">
-												<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
-											</span>
 											
-										</div>
-									</div>
-								</div>
-									
-							<?php
+									<?php
+							}
+							
 								}
 							?>
 						</div>
@@ -206,32 +213,141 @@ include 'includes/slider.php';
 					<div id="tab-4" class="tab-panel">
 						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
 						<?php
-							$product_feathered = $product->getLastestSamsung();
-							foreach($product_feathered as $result){
-							?>
-								<div class="product-item style1">
-									<div class="product-inner equal-elem">
-										<div class="product-thumb">
-											<div class="thumb-inner">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>">
-												<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+							$product_LastestAcer = $product->getLastestAcer();
+							if($product_LastestAcer){
+								foreach($product_LastestAcer as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
 											</div>
 										</div>
-										<div class="product-innfo">
-
-											<div class="product-name">
-												<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
-												<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
-											</div>
-											<span class="price">
-												<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
-											</span>
 											
+									<?php
+										}
+							}
+							
+							?>
+						</div>
+					</div>
+					<div id="tab-5" class="tab-panel">
+						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
+						<?php
+							$product_LastestAsus = $product->getLastestAsus();
+							if($product_LastestAsus){
+								foreach($product_LastestAsus as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
-									
-							<?php
+											
+									<?php
+									}
+								}
+							?>
+						</div>
+					</div>
+					<div id="tab-6" class="tab-panel">
+						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
+						<?php
+							$product_LastestMsi = $product->getLastestMsi();
+							if($product_LastestMsi){
+								foreach($product_LastestMsi as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
+											</div>
+										</div>
+											
+									<?php
+								}
+								}
+							?>
+						</div>
+					</div>
+					<div id="tab-7" class="tab-panel">
+						<div class="owl-carousel nav-style2 border-background equal-container" data-nav="false" data-autoplay="false" data-dots="false" data-loop="true" data-margin="30" data-responsive='{"0":{"items":1},"480":{"items":2},"768":{"items":3},"992":{"items":4},"1200":{"items":4}}'>
+						<?php
+							$product_LastestApple = $product->getLastestApple();
+							if($product_LastestApple){
+								foreach($product_LastestApple as $result){
+									?>
+										<div class="product-item style1">
+											<div class="product-inner equal-elem">
+												<div class="product-thumb">
+													<div class="thumb-inner">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>">
+														<img src="admin/uploads/<?php echo $result['image'] ?>" alt="r1"></a>
+													</div>
+												</div>
+												<div class="product-innfo">
+		
+													<div class="product-name">
+														<a href="details.php?proid=<?php echo $result['productId'] ?>"><?php echo $result['productName'] ?></a>
+														<p><?php echo $fm->textShorten($result['product_desc'], 50) ?></p>
+													</div>
+													<span class="price">
+														<ins><?php echo $fm->format_currency($result['price']) . " " . "VNĐ" ?></ins>
+													</span>
+													
+												</div>
+											</div>
+										</div>
+											
+									<?php
+							}
+							
 								}
 							?>
 						</div>
@@ -269,13 +385,13 @@ include 'includes/slider.php';
 				</div>
 				<div class="mt-8 p-2 ">
 					<h3 class="text-3xl">
-						<a href="detailsNew.php?newid=<?php echo $val['newId'] ?>"><?php echo $fm->textShorten($val['title'], 50) ?></a>
+						<a href="newsdetails.php?newid=<?php echo $val['newId'] ?>"><?php echo $fm->textShorten($val['title'], 50) ?></a>
 					</h3>
 					<div class="my-4">
 						<span class="text-red-500">Người đăng: <span>Admin</span></span>
 						<!-- <span class="comment"><i class="fa fa-comment" aria-hidden="true"></i>36 Comments</span> -->
 					</div>
-					<p><?php echo $fm->textShorten($val['description'], 100) ?>
+					<p><?php echo $fm->textShorten($val['description'], 200) ?>
 					</p>
 				</div>
 			</div>

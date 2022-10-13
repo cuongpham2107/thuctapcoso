@@ -74,7 +74,7 @@
 			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 
-			if(empty($catName)){
+			if(empty($catName) || $file_name ==""){
 				$alert = "<span class='error'>Các trường danh mục không được để trống</span>";
 				return $alert;
 			}else{
